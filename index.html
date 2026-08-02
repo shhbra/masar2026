@@ -1800,49 +1800,6 @@ html.locked #gate{display:block}
     </div>
   </section>
 
-  <section class="section" id="aast">
-    <div class="sec-head">
-      <span class="sec-kicker">حالة خاصة</span>
-      <h2>الأكاديمية العربية للنقل البحري</h2>
-      <p><span class="pill p-ok">من النشرة الرسمية aast.edu</span> الحالة الوحيدة اللي عندنا فيها المستند الأصلي كامل. النظام مختلف تمامًا: <strong>بالدولار، للفصل الدراسي، وبفئات حسب مجموع الثانوية</strong>.</p>
-    </div>
-    <div class="fee-card">
-      <div class="fee-head">
-        <h3>نشرة المصروفات 2026/2027 — لأبناء الدول الداعمة (مصر والسودان)</h3>
-        <div class="fee-meta">
-          <span class="pill p-ok">مستند رسمي</span>
-          <span class="pill p-navy">بالدولار / للفصل الدراسي</span>
-          <span class="pill p-grey">فئة أ = الأعلى مجموعًا · فئة ج = الأقل</span>
-        </div>
-      </div>
-      <div class="tbl" style="border:none;box-shadow:none;border-radius:0">
-        <table>
-          <thead><tr><th style="text-align:right;padding-inline-start:16px">الكلية</th><th>فئة أ</th><th>فئة ب</th><th>فئة ج</th><th>≈ بالجنيه سنويًا (فئة أ)</th></tr></thead>
-          <tbody id="aastBody"></tbody>
-        </table>
-      </div>
-      <div class="fee-warn">
-        <b>التحويل:</b> المصري بيسدد بسعر دولار محدد من الأكاديمية = 23 جنيه (اضرب × 46 = تكلفة السنة).
-        <b>إضافي:</b> 300$ رسوم التحاق غير مستردة · 450$ رسوم معامل في الفصل الأول (800$ للقطاع الطبي) · 200$ في الفترة التانية و120$ في الرابعة بالدولار الحقيقي · زيادة سنوية 150$ + حق رفع سعر الدولار الداخلي حتى 15% سنويًا.
-        <b>النقل البحري:</b> إقامة وتغذية إجبارية 3270$ للفصل في أول 4 فصول بسعر صرف 25 جنيه.
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ الوافدين ============ -->
-  <section class="section" id="usd">
-    <div class="sec-head">
-      <span class="sec-kicker">للوافدين</span>
-      <h2>الرسوم السنوية بالدولار</h2>
-      <p><span class="pill p-near">نطاقات سنوية</span> النطاق بيغطي كل كليات الجامعة من الأرخص للأغلى — مفيد لترتيب الجامعات حسب الشريحة السعرية قبل ما تدخل في التفاصيل.</p>
-    </div>
-    <div class="tbl">
-      <table>
-        <thead><tr><th style="text-align:right;padding-inline-start:16px">الجامعة</th><th>من</th><th>إلى</th><th>الشريحة</th></tr></thead>
-        <tbody id="usdBody"></tbody>
-      </table>
-    </div>
-  </section>
 
   <!-- ============ أداة المقارنة ============ -->
   <section class="section" id="compare">
@@ -1958,6 +1915,50 @@ html.locked #gate{display:block}
           </ul>
         </div>
       </details>
+    </div>
+  </section>
+
+  <section class="section" id="aast">
+    <div class="sec-head">
+      <span class="sec-kicker">حالة خاصة</span>
+      <h2>الأكاديمية العربية للنقل البحري</h2>
+      <p><span class="pill p-ok">من النشرة الرسمية aast.edu</span> الحالة الوحيدة اللي عندنا فيها المستند الأصلي كامل. النظام مختلف تمامًا: <strong>بالدولار، للفصل الدراسي، وبفئات حسب مجموع الثانوية</strong>.</p>
+    </div>
+    <div class="fee-card">
+      <div class="fee-head">
+        <h3>نشرة المصروفات 2026/2027 — لأبناء الدول الداعمة (مصر والسودان)</h3>
+        <div class="fee-meta">
+          <span class="pill p-ok">مستند رسمي</span>
+          <span class="pill p-navy">بالدولار / للفصل الدراسي</span>
+          <span class="pill p-grey">فئة أ = الأعلى مجموعًا · فئة ج = الأقل</span>
+        </div>
+      </div>
+      <div class="tbl" style="border:none;box-shadow:none;border-radius:0">
+        <table>
+          <thead><tr><th style="text-align:right;padding-inline-start:16px">الكلية</th><th>فئة أ</th><th>فئة ب</th><th>فئة ج</th><th>≈ بالجنيه سنويًا (فئة أ)</th></tr></thead>
+          <tbody id="aastBody"></tbody>
+        </table>
+      </div>
+      <div class="fee-warn">
+        <b>التحويل:</b> المصري بيسدد بسعر دولار محدد من الأكاديمية = 23 جنيه (اضرب × 46 = تكلفة السنة).
+        <b>إضافي:</b> 300$ رسوم التحاق غير مستردة · 450$ رسوم معامل في الفصل الأول (800$ للقطاع الطبي) · 200$ في الفترة التانية و120$ في الرابعة بالدولار الحقيقي · زيادة سنوية 150$ + حق رفع سعر الدولار الداخلي حتى 15% سنويًا.
+        <b>النقل البحري:</b> إقامة وتغذية إجبارية 3270$ للفصل في أول 4 فصول بسعر صرف 25 جنيه.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ الوافدين ============ -->
+  <section class="section" id="usd">
+    <div class="sec-head">
+      <span class="sec-kicker">للوافدين</span>
+      <h2>الرسوم السنوية بالدولار</h2>
+      <p><span class="pill p-near">نطاقات سنوية</span> النطاق بيغطي كل كليات الجامعة من الأرخص للأغلى — مفيد لترتيب الجامعات حسب الشريحة السعرية قبل ما تدخل في التفاصيل.</p>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th style="text-align:right;padding-inline-start:16px">الجامعة</th><th>من</th><th>إلى</th><th>الشريحة</th></tr></thead>
+        <tbody id="usdBody"></tbody>
+      </table>
     </div>
   </section>
 
