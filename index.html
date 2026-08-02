@@ -14,13 +14,13 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="مسار MASAR">
 <meta property="og:title" content="مسار MASAR — اعرف كل كلية مفتوحة قدامك حسب مجموعك">
-<meta property="og:description" content="اكتب نسبتك أو درجتك من 320 وشوف كل كلية تقدر تدخلها في الـ70 جامعة خاصة وأهلية + التنسيق الحكومي، ومعاها المصروفات المعلنة.">
+<meta property="og:description" content="اكتب نسبتك أو درجتك من 320 وشوف كل كلية تقدر تدخلها في الـ69 جامعة خاصة وأهلية + التنسيق الحكومي، ومعاها المصروفات المعلنة.">
 <meta property="og:url" content="https://SITE_URL/">
 <meta property="og:image" content="https://SITE_URL/og-image.png">
 <meta property="og:locale" content="ar_EG">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="مسار MASAR — اعرف كل كلية مفتوحة قدامك حسب مجموعك">
-<meta name="twitter:description" content="الحدود الدنيا والمصروفات المعلنة لـ70 جامعة خاصة وأهلية في مكان واحد.">
+<meta name="twitter:description" content="الحدود الدنيا والمصروفات المعلنة لـ69 جامعة خاصة وأهلية في مكان واحد.">
 <meta name="twitter:image" content="https://SITE_URL/og-image.png">
 
 <!-- ⚙️ Google Search Console — حط كود التحقق بتاعك مكان GSC_CODE -->
@@ -41,7 +41,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "مسار MASAR — دليل التنسيق والمصروفات",
-  "description": "حاسبة تنسيق الثانوية العامة المصرية: الحدود الدنيا والمصروفات المعلنة لـ70 جامعة خاصة وأهلية.",
+  "description": "حاسبة تنسيق الثانوية العامة المصرية: الحدود الدنيا والمصروفات المعلنة لـ69 جامعة خاصة وأهلية.",
   "url": "https://SITE_URL/",
   "applicationCategory": "EducationalApplication",
   "inLanguage": "ar-EG",
@@ -991,6 +991,41 @@ html.locked #gate{display:block}
 }
 </style>
 <script>document.documentElement.classList.add('locked');</script>
+<script>
+/* ══════════════════════════════════════════════════════════
+   حماية أمامية — تصعيب النسخ والفحص على الهواة
+   ملاحظة: ده حاجز سرعة يوقف أغلب المحاولات، مش قفل نهائي.
+   أي كود بيشتغل في المتصفح ممكن يتقرأ في الآخر.
+   ══════════════════════════════════════════════════════════ */
+(function(){
+  "use strict";
+  var stop = function(e){ e.preventDefault(); return false; };
+
+  /* 1) منع كليك يمين */
+  document.addEventListener('contextmenu', stop, {capture:true});
+
+  /* 2) منع السحب للصور والنصوص */
+  document.addEventListener('dragstart', stop, {capture:true});
+
+  /* 3) منع اختصارات الفحص وعرض المصدر والحفظ */
+  document.addEventListener('keydown', function(e){
+    var k = (e.key || '').toLowerCase();
+    if(k === 'f12') return stop(e);
+    if((e.ctrlKey || e.metaKey) && e.shiftKey && (k==='i' || k==='j' || k==='c')) return stop(e);
+    if((e.ctrlKey || e.metaKey) && (k==='u' || k==='s')) return stop(e);
+  }, {capture:true});
+
+  /* 4) منع نسخ محتوى الصفحة — مع استثناء خانات الإدخال
+        عشان أزرار «نسخ» جوه الأدوات تفضل شغالة عادي */
+  ['copy','cut'].forEach(function(ev){
+    document.addEventListener(ev, function(e){
+      var t = e.target;
+      if(t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+      stop(e);
+    }, {capture:true});
+  });
+})();
+</script>
 </head>
 <body>
 
@@ -1097,11 +1132,11 @@ html.locked #gate{display:block}
       </div>
 
       <div id="payZone">
-      <div class="pricebar"><b class="num" id="gPrice"></b><span>جنيه — مرة واحدة، وبيفضل مفتوح ليك</span></div>
+      <div class="pricebar"><b class="num" id="gPrice"></b><span>جنيه — مرة واحدة، مش اشتراك</span></div>
 
       <div class="perks">
         <div><i>✓</i><span>قايمة كل الكليات المفتوحة ليك بالنسبة والدرجة من 320</span></div>
-        <div><i>✓</i><span>الحدود الدنيا للـلجامعات الخاصة والأهلية + التنسيق الحكومي 2026-2025</span></div>
+        <div><i>✓</i><span>الحدود الدنيا للـ69 جامعة خاصة وأهلية + التنسيق الحكومي 2025</span></div>
         <div><i>✓</i><span>مصروفات 2026/2027 المعلنة رسميًا لكل كلية</span></div>
         <div><i>✓</i><span>تبويب «قريبة منك» — الكليات اللي فاتتك بفرق نقطتين أو تلاتة</span></div>
       </div>
@@ -1150,8 +1185,6 @@ html.locked #gate{display:block}
 
   </div>
 </div>
-
-<!-- ============ التنقل ============ -->
 
 <!-- ============ التنقل ============ -->
 <nav class="nav">
@@ -1214,7 +1247,7 @@ html.locked #gate{display:block}
     </div>
 
     <div class="hero-stats">
-      <div><b class="num">324</b><span>مؤسسة في الدليل</span></div>
+      <div><b class="num">364</b><span>مؤسسة في الدليل</span></div>
       <div><b class="num">37</b><span>خاصة معتمدة</span></div>
       <div><b class="num">182</b><span>معهد عالي</span></div>
       <div><b>١ أغسطس</b><span>آخر تحديث</span></div>
@@ -1269,7 +1302,7 @@ html.locked #gate{display:block}
         <div class="hook-pt">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-          <span><b>393 مؤسسة</b>جامعات ومعاهد بالقائمة الرسمية</span>
+          <span><b>364 مؤسسة</b>جامعات ومعاهد بالقائمة الرسمية</span>
         </div>
         <div class="hook-pt">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -1350,7 +1383,7 @@ html.locked #gate{display:block}
   
 
   <div class="chips-box">
-    <h3>✅ الـ28 جهة المعلن عن مصروفاتها رسميًا لـ 2026/2027 (تطبق مؤشرات تنسيق 2025)</h3>
+    <h3>✅ 29 جهة أعلنت مصروفاتها رسميًا لـ 2026/2027 + الأكاديمية العربية (تطبق مؤشرات تنسيق 2025)</h3>
     <div class="chips" id="announced">
       <button type="button" data-q="القاهرة الأهلية">القاهرة الأهلية</button>
       <button type="button" data-q="حلوان">حلوان الأهلية</button>
@@ -1379,9 +1412,10 @@ html.locked #gate{display:block}
       <button type="button" data-q="MUST">مصر (MUST)</button>
       <button type="button" data-q="MSA">MSA</button>
       <button type="button" data-q="GUC">الألمانية (GUC)</button>
+      <button type="button" data-q="بدر بالقاهرة">بدر بالقاهرة (BUC)</button>
       <a href="#aast">الأكاديمية العربية (AAST)</a>
     </div>
-    <p class="chips-hint">اضغط على أي جامعة تشوف نسبها ومصروفاتها في جدول واحد. <b>+ 13 جامعة أهلية جديدة أعلنت من 29 يوليو</b> — منها الجلالة والإسكندرية والملك سلمان وبنها والمنيا.</p>
+    <p class="chips-hint">اضغط على أي جامعة تشوف نسبها ومصروفاتها في جدول واحد. <b>+ 13 جامعة أهلية جديدة أعلنت من 29 يوليو</b> — منها الجلالة والإسكندرية والملك سلمان وبنها والمنيا. <b>فرع هيرتفوردشير البريطانية</b> مصروفاته في قسم «بطاقات المصروفات» تحت (مش في القائمة المعتمدة فمالوش صفحة هنا).</p>
   </div>
 
 
@@ -1911,7 +1945,7 @@ html.locked #gate{display:block}
       <li><b>وقت التقديم بيغيّر السعر</b> في الجامعات اللي بتعتمد نظام الفئات (A إلى D) زي MSA. التقديم المبكر أرخص بشكل ملحوظ.</li>
       <li><b>المجموع مبيخفّضش المصروفات</b> في الجامعات الخاصة عادةً — لكن فيه منح جزئية أو كاملة للمتفوقين وأوائل الثانوية بشروط بتعلنها كل جامعة سنويًا.</li>
       <li><b>وجود الكلية في الجامعة مش مضمون.</b> جدول النسب بيوريك الحد الأدنى المطبَّق على الجامعة دي لو الكلية موجودة عندها — لكن مش كل جامعة فيها كل الكليات. أكّد من موقع الجامعة.</li>
-      <li><b>اتأكد إن الجامعة في القائمة المعتمدة</b> الصادرة عن وزارة التعليم العالي (38 خاصة + 32 أهلية). أي كيان خارجها غير معترف به.</li>
+      <li><b>اتأكد إن الجامعة في القائمة المعتمدة</b> الصادرة عن وزارة التعليم العالي (37 خاصة + 32 أهلية). أي كيان خارجها غير معترف به.</li>
     </ul>
   </section>
 
@@ -2202,7 +2236,7 @@ const ALL_UNIS = [
   {n:'جامعة دمياط الأهلية',                  t:'أهلية', tier:4, fee:'ok'},
   {n:'جامعة مدينة السادات الأهلية',          t:'أهلية', tier:4, fee:'ok', note:NOTE_T4},
 
-  /* ---- خاصة (38) ---- */
+  /* ---- خاصة (37) ---- */
   {n:'جامعة 6 أكتوبر (O6U)',                          t:'خاصة', tier:3, fee:'ok',  note:NOTE_THEORY},
   {n:'جامعة أكتوبر للعلوم الحديثة والآداب (MSA)',      t:'خاصة', tier:3, fee:'ok',  note:NOTE_THEORY},
   {n:'جامعة مصر للعلوم والتكنولوجيا (MUST)',           t:'خاصة', tier:3, fee:'ok',  note:NOTE_THEORY},
@@ -2360,7 +2394,7 @@ const UNIS = [
          ['إدارة الأعمال',48000]]},
   {name:'فرع جامعة هيرتفوردشير البريطانية — العاصمة الإدارية', type:'خاصة', unit:'سنوي', conf:'ok',
    src:'مصروفات معلنة 2026-2027 — «العين الإخبارية» 29 يوليو 2026',
-   note:'ده فرع لجامعة أجنبية في العاصمة الإدارية، مش واحدة من الـ38 جامعة خاصة المعتمدة — نظام القبول والحدود الدنيا عنده مختلف تمامًا. أكّد من الفرع نفسه.',
+   note:'ده فرع لجامعة أجنبية في العاصمة الإدارية، مش واحدة من الـ37 جامعة خاصة المعتمدة — نظام القبول والحدود الدنيا عنده مختلف تمامًا. أكّد من الفرع نفسه.',
    rows:[['الهندسة',310000,370000],['علوم الحاسب',310000,370000],['العلوم الطبية',310000,370000],
          ['إدارة الأعمال',280000,330000],['العلوم الإنسانية',280000,330000]]},
   {name:'جامعة 6 أكتوبر (O6U)', type:'خاصة', unit:'سنوي', conf:'ok',
