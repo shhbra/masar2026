@@ -9,6 +9,7 @@
 <meta name="author" content="دليل التنسيق والمصروفات">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://masar2026.vercel.app/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Ccircle cx='48' cy='48' r='47' fill='%23101D2C'/%3E%3Ccircle cx='48' cy='48' r='36' fill='none' stroke='%23C08A2E' stroke-width='7' stroke-linecap='round' stroke-dasharray='212 14' transform='rotate(-79 48 48)'/%3E%3Cpath d='M48 22 71 47H59.5v13h-23V47H25Z' fill='%23B34A38'/%3E%3Crect x='25' y='71' width='46' height='9' rx='4.5' fill='%23FAF7EF'/%3E%3C/svg%3E">
 
 <!-- مشاركة على السوشيال -->
 <meta property="og:type" content="website">
@@ -101,8 +102,12 @@ button,input,select{font-family:inherit}
   border-bottom:1px solid rgba(255,255,255,.09)}
 .nav-in{max-width:var(--wrap);margin:0 auto;display:flex;align-items:center;gap:14px;padding:0 18px}
 .brand{display:flex;align-items:center;gap:9px;padding:11px 0;flex:0 0 auto}
-.brand-mark{width:30px;height:30px;border-radius:9px;background:var(--brand);color:#FFFFFF;
-  display:grid;place-items:center;font-weight:800;font-size:.85rem;font-family:'Alexandria',sans-serif}
+.brand-mark{width:32px;height:32px;flex:0 0 auto;display:grid;place-items:center;
+  filter:drop-shadow(0 2px 7px rgba(192,138,46,.38))}
+.brand-mark svg{width:100%;height:100%;display:block}
+.logo-ring{stroke:var(--gold)}
+.logo-arrow{fill:var(--brand-2)}
+.logo-base{fill:#FAF7EF}
 .brand-txt{color:#fff;font-weight:700;font-size:.9rem;font-family:'Alexandria',sans-serif;white-space:nowrap}
 .brand-txt small{display:block;color:#B7AF9D;font-weight:400;font-size:.68rem;letter-spacing:.02em}
 .nav-links{display:flex;gap:2px;overflow-x:auto;flex:1;scrollbar-width:none;-webkit-overflow-scrolling:touch}
@@ -238,6 +243,7 @@ main{padding:34px 0 10px}
 .fold[open] .fold-btn{background:#F1EBDB;color:var(--muted);box-shadow:none}
 .fold[open] .fold-btn svg{transform:rotate(180deg)}
 .fold[open] .fold-btn em::before{content:'إخفاء الجدول'}
+.fold-steps[open] .fold-btn em::before{content:'إخفاء الخطوات'}
 .fold[open] .fold-btn em{font-size:0}
 .fold[open] .fold-btn em::before{font-size:.83rem}
 .fold summary:hover{background:#F1EBDB}
@@ -551,6 +557,29 @@ tbody tr:hover{background:#F1EBDB}
 .c-sub{font-size:.78rem;color:var(--muted);font-weight:500}
 .money{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;white-space:nowrap}
 
+/* صف كلية حكومية بس (مفيش ليها فئات) */
+td.cell.govonly{background:#F1EBDB;text-align:center;font-weight:500}
+
+/* جروب تليجرام */
+.tg-cta{display:flex;align-items:center;gap:13px;flex-wrap:wrap;
+  background:linear-gradient(150deg,#229ED9,#1C3049);border-radius:var(--r-l);
+  padding:16px 18px;margin-bottom:22px;color:#fff;box-shadow:var(--shadow-m)}
+.tg-cta .tg-ic{flex:0 0 auto;width:42px;height:42px;border-radius:14px;background:rgba(255,255,255,.15);
+  display:grid;place-items:center}
+.tg-cta .tg-ic svg{width:24px;height:24px}
+.tg-cta .tg-tx{flex:1;min-width:190px}
+.tg-cta b{display:block;font-family:'Alexandria',sans-serif;font-size:1rem;line-height:1.5}
+.tg-cta span.tg-sub{display:block;font-size:.84rem;color:#D8ECF7;line-height:1.7;margin-top:2px}
+.tg-cta a.tg-btn{flex:0 0 auto;background:#fff;color:#0B4A66;text-decoration:none;
+  font-family:'Alexandria',sans-serif;font-weight:700;font-size:.88rem;
+  padding:11px 20px;border-radius:999px;transition:.15s;white-space:nowrap}
+.tg-cta a.tg-btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.nav-links a.tg-link{color:#7FD0F2;font-weight:700}
+
+/* الجدول الشامل: ترويسة من صفّين — الصف التاني بيلزق تحت الأول */
+#grid thead tr:first-child th{top:0;padding:6px 9px;height:34px}
+#grid thead tr:last-child th{top:34px}
+
 .cell{font-weight:700;font-variant-numeric:tabular-nums}
 .cell .pc{display:block;font-size:.9rem;line-height:1.25}
 .cell .rw{font-size:.7rem;font-weight:500;opacity:.7}
@@ -627,7 +656,7 @@ td.cell.shut .gov-nm{background:#EFD6D0;color:#7A2C22}
 .uni-note{padding:11px 16px;background:var(--near-bg);font-size:.83rem;color:#6E4718;
   border-top:1px solid var(--near-line)}
 .uni-foot{padding:10px 16px;background:#F1EBDB;border-top:1px solid var(--line);
-  font-size:.78rem;color:var(--muted)}
+  font-size:.78rem;color:var(--muted);line-height:1.9}
 .uni table{min-width:420px}
 .uni th{background:#2A4463;font-size:.76rem}
 
@@ -640,7 +669,7 @@ td.cell.shut .gov-nm{background:#EFD6D0;color:#7A2C22}
 .fee-card table{min-width:400px}
 .fee-card th{background:#2A4463;font-size:.78rem}
 .fee-src{padding:10px 18px;background:#F1EBDB;border-top:1px solid var(--line);
-  font-size:.78rem;color:var(--muted)}
+  font-size:.78rem;color:var(--muted);line-height:1.9}
 .fee-warn{padding:11px 18px;background:var(--near-bg);border-top:1px solid var(--near-line);
   font-size:.83rem;color:#6E4718}
 
@@ -708,10 +737,9 @@ html.locked #gate{display:block}
 
 /* ---- الترويسة ---- */
 .gate-top{text-align:center;margin-bottom:22px}
-.gate-mark{width:50px;height:50px;border-radius:15px;background:var(--brand);color:#FFFFFF;
-  box-shadow:0 0 30px rgba(156,59,46,.45);
-  display:grid;place-items:center;font-family:'Alexandria',sans-serif;font-weight:800;
-  font-size:1.4rem;margin:0 auto 13px}
+.gate-mark{width:76px;height:76px;display:grid;place-items:center;margin:0 auto 14px;
+  filter:drop-shadow(0 8px 28px rgba(192,138,46,.42))}
+.gate-mark svg{width:100%;height:100%;display:block}
 .gate-brand{font-family:'Alexandria',sans-serif;font-size:1.6rem;font-weight:800;
   color:#fff;line-height:1.2;margin-bottom:10px;letter-spacing:-.02em}
 .gate-brand span{display:block;font-size:.72rem;font-weight:600;color:var(--gold);
@@ -1006,13 +1034,39 @@ th{letter-spacing:.02em}
 .cta,.gbtn,.tool-btn{letter-spacing:.01em}
 .hero h1 em{ text-shadow:0 1px 0 rgba(0,0,0,.15) }
 .res-stat .v.big,.gapitem .v,.hero-res .big{font-family:'JetBrains Mono',monospace}
+
+/* ============================================================
+   ضمان استرجاع الفلوس
+   ============================================================ */
+.guarantee{display:flex;gap:11px;align-items:flex-start;background:rgba(90,163,125,.13);
+  border:1px solid rgba(90,163,125,.45);border-radius:var(--r-m);padding:13px 15px;margin-bottom:14px}
+.guarantee .g-ic{flex:0 0 auto;font-size:1.2rem;line-height:1.5}
+.guarantee b{display:block;font-family:'Alexandria',sans-serif;font-size:.93rem;color:#8FD3AE;margin-bottom:3px}
+.guarantee .g-tx{display:block;font-size:.85rem;color:#E6DFCF;line-height:1.85}
+
+/* ============================================================
+   لينكات تسجيل الرغبات + الخطوات
+   ============================================================ */
+.wl-links{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.wl-links a{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:var(--r-m);
+  text-decoration:none;font-weight:700;font-size:.87rem;font-family:'Alexandria',sans-serif;transition:.15s}
+.wl-links a.main{background:var(--brand);color:#fff;box-shadow:0 6px 18px rgba(156,59,46,.28)}
+.wl-links a.main:hover{background:var(--brand-2);transform:translateY(-1px)}
+.wl-links a.alt{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+.wl-links a.alt:hover{border-color:var(--navy-3);transform:translateY(-1px)}
+.steps{counter-reset:st;display:grid;gap:6px;margin:10px 0 0;padding:0}
+.steps li{list-style:none;position:relative;padding-inline-start:34px;font-size:.87rem;
+  line-height:1.85;color:var(--text)}
+.steps li::before{counter-increment:st;content:counter(st);position:absolute;inset-inline-start:0;top:5px;
+  width:23px;height:23px;border-radius:7px;background:var(--navy);color:#fff;display:grid;
+  place-items:center;font-size:.74rem;font-weight:700;font-variant-numeric:tabular-nums}
 </style>
 <script>document.documentElement.classList.add('locked');</script>
 <script>
 /* ══════════════════════════════════════════════════════════
    حماية أمامية — تصعيب النسخ والفحص على الهواة
    ملاحظة: ده حاجز سرعة يوقف أغلب المحاولات، مش قفل نهائي.
-   أي كود بيشتغل في المتصفح ممكن يتقرأ في الآخر.
+   أي كود بيشتغل في المتصفح ممكن يتقرا في الآخر.
    ══════════════════════════════════════════════════════════ */
 (function(){
   "use strict";
@@ -1051,7 +1105,16 @@ th{letter-spacing:.02em}
   <div class="gate-in">
 
     <div class="gate-top">
-      <div class="gate-mark">م</div>
+      <div class="gate-mark">
+        <svg viewBox="0 0 96 96" role="img" aria-label="مسار">
+          <circle class="logo-ring" cx="48" cy="48" r="36" fill="none" stroke-width="7"
+            stroke-linecap="round" stroke-dasharray="212 14" transform="rotate(-79 48 48)"/>
+          <path class="logo-arrow" d="M48 22 71 47H59.5v13h-23V47H25Z"/>
+          <rect class="logo-base" x="27" y="52" width="9" height="15" rx="4.5"/>
+          <rect class="logo-base" x="60" y="52" width="9" height="15" rx="4.5"/>
+          <rect class="logo-base" x="25" y="71" width="46" height="9" rx="4.5"/>
+        </svg>
+      </div>
       <div class="gate-brand">مسار<span>MASAR</span></div>
       <h1>اعرف <em>كل كلية</em> مفتوحة قدامك<br>حسب مجموعك</h1>
       <p>دليل التنسيق والمصروفات 2026/2027</p>
@@ -1149,7 +1212,15 @@ th{letter-spacing:.02em}
       </div>
 
       <div id="payZone">
-      <div class="pricebar"><b class="num" id="gPrice"></b><span>جنيه — مرة واحدة، وبيفضل مفتوحلك</span></div>
+      <div class="guarantee">
+        <span class="g-ic">🛡️</span>
+        <div>
+          <b>ضمان استرجاع الفلوس</b>
+          <span class="g-tx">لو الخدمة فيها أي مشكلة أو الكود مشتغلش معاك، فلوسك بترجعلك <b style="color:#8FD3AE">كاملة</b> — كلّمني على الواتساب أو التليجرام وهحوّلهالك من غير أسئلة.</span>
+        </div>
+      </div>
+
+      <div class="pricebar"><b class="num" id="gPrice"></b><span>ج وكل الأدوات بتفضل مفتوحة معاك — بسعر سندوتش 😂</span></div>
 
       <div class="perks">
         <div><i>✓</i><span>قايمة كل الكليات المفتوحة ليك بالنسبة والدرجة من 320</span></div>
@@ -1160,6 +1231,7 @@ th{letter-spacing:.02em}
         <div><i>✓</i><span>🎯 ترتيب ذكي لرغباتك الـ75 حسب التوزيع الجغرافي الرسمي</span></div>
         <div><i>✓</i><span>📝 أداة مقارنة بين الجامعات جنب بعض</span></div>
         <div><i>✓</i><span>🎁 رادار المنح + 🧠 اختبار «اكتشف مسارك»</span></div>
+        <div><i>✓</i><span>🛡️ ضمان استرجاع كامل لو الخدمة فيها مشكلة</span></div>
       </div>
 
       <div class="gcard">
@@ -1179,7 +1251,8 @@ th{letter-spacing:.02em}
 
       <div class="gcard">
         <div class="gcard-h"><span class="gcard-n">3</span><b>ابعتلي صورة الإيصال</b></div>
-        <p>اضغط الزرار وهيفتحلك الشات ببياناتك جاهزة — ارفق صورة التحويل وابعتها.</p>
+        <p>اضغط زرار الواتساب وهيفتحلك الشات ببياناتك جاهزة — ارفق صورة التحويل وابعتها.
+        وادخل جروب التليجرام عشان تتابع كل جديد في التنسيق أول بأول.</p>
         <div class="sendbtns" id="sendBtns"></div>
       </div>
 
@@ -1200,6 +1273,7 @@ th{letter-spacing:.02em}
 
       <p class="gate-foot">
         عندك مشكلة في الدفع أو الكود؟ <a id="gHelp" href="#">كلّمني على تليجرام</a><br>
+        ولو حابب تتابع كل جديد في التنسيق: <a id="gGroup" href="#" target="_blank" rel="noopener">ادخل جروب التليجرام</a><br>
         الكود بيشتغل على الجهاز ده ومش هتحتاج تكتبه تاني.
       </p>
     </div>
@@ -1211,7 +1285,16 @@ th{letter-spacing:.02em}
 <nav class="nav">
   <div class="nav-in">
     <a class="brand" href="#top" style="text-decoration:none">
-      <span class="brand-mark">م</span>
+      <span class="brand-mark">
+        <svg viewBox="0 0 96 96" role="img" aria-label="مسار">
+          <circle class="logo-ring" cx="48" cy="48" r="36" fill="none" stroke-width="7"
+            stroke-linecap="round" stroke-dasharray="212 14" transform="rotate(-79 48 48)"/>
+          <path class="logo-arrow" d="M48 22 71 47H59.5v13h-23V47H25Z"/>
+          <rect class="logo-base" x="27" y="52" width="9" height="15" rx="4.5"/>
+          <rect class="logo-base" x="60" y="52" width="9" height="15" rx="4.5"/>
+          <rect class="logo-base" x="25" y="71" width="46" height="9" rx="4.5"/>
+        </svg>
+      </span>
       <span class="brand-txt">مسار · MASAR<small>دليل التنسيق والمصروفات 2026</small></span>
     </a>
     <div class="nav-links">
@@ -1229,6 +1312,7 @@ th{letter-spacing:.02em}
       <a href="#gap">الفخ الأكبر</a>
       <a href="#after">بعد القبول</a>
       <a href="#notes">قبل ما تدفع</a>
+      <a class="tg-link" href="https://t.me/+HYeYbf346ylhMWM8" target="_blank" rel="noopener">💬 جروب تليجرام</a>
     </div>
     <button class="nav-score" id="navScore" type="button"></button>
   </div>
@@ -1237,7 +1321,7 @@ th{letter-spacing:.02em}
 <!-- ============ الهيرو ============ -->
 <header class="hero" id="top">
   <div class="hero-in">
-    <span class="eyebrow">⬤ <b>المرحلة الأولى 2026 اتعلنت</b> — وحدود الكليات مؤشر 2025</span>
+    <span class="eyebrow">⬤ <b>تسجيل رغبات المرحلة الأولى مفتوح دلوقتي</b> — وحدود الكليات مؤشر 2025</span>
     <h1>اكتب مجموعك، واعرف <em>كل كلية</em> مفتوحة قدامك</h1>
     <p class="hero-sub">حدود دنيا حقيقية للجامعات الحكومية والخاصة والأهلية، بالنسبة والدرجة من 320، ومعاها المصروفات المعلنة لكل كلية.</p>
 
@@ -1273,7 +1357,7 @@ th{letter-spacing:.02em}
       <div><b class="num">38</b><span>خاصة معتمدة</span></div>
       <div><b class="num">32</b><span>أهلية معتمدة</span></div>
       <div><b class="num">182</b><span>معهد عالي</span></div>
-      <div><b>٣ أغسطس</b><span>آخر تحديث</span></div>
+      <div><b>٥ أغسطس</b><span>آخر تحديث</span></div>
     </div>
   </div>
 </header>
@@ -1341,6 +1425,18 @@ th{letter-spacing:.02em}
     </div>
   </div>
 
+  <!-- ============ جروب تليجرام ============ -->
+  <div class="tg-cta">
+    <span class="tg-ic">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20m4.6 6.9-1.5 7.3c-.1.5-.4.6-.9.4l-2.4-1.8-1.2 1.1c-.1.1-.2.2-.5.2l.2-2.5 4.5-4c.2-.2-.1-.3-.3-.1L8.9 13l-2.4-.7c-.5-.2-.5-.5.1-.8l9.3-3.6c.4-.1.8.1.7.9"/></svg>
+    </span>
+    <span class="tg-tx">
+      <b>ادخل جروب التنسيق على تليجرام</b>
+      <span class="tg-sub">كل جديد في التنسيق والمصروفات والمنح أول بأول، واسأل أي سؤال وهرد عليك.</span>
+    </span>
+    <a class="tg-btn" href="https://t.me/+HYeYbf346ylhMWM8" target="_blank" rel="noopener">انضم للجروب</a>
+  </div>
+
   <!-- ============ النتيجة ============ -->
   <section class="section" id="results">
     <div class="res-card">
@@ -1370,7 +1466,7 @@ th{letter-spacing:.02em}
     <div class="status-h">
       <span class="live"></span>
       <b>حالة التنسيق دلوقتي</b>
-      <span class="status-date">آخر مراجعة: 3 أغسطس 2026</span>
+      <span class="status-date">آخر مراجعة: 5 أغسطس 2026</span>
     </div>
     <div class="status-grid">
       <div class="st done">
@@ -1384,9 +1480,11 @@ th{letter-spacing:.02em}
         <span class="st-s">علوم 91.25% · رياضة 86.09% · أدبي 71.56% — التفاصيل تحت</span>
       </div>
       <div class="st urgent">
-        <span class="st-k">⏳ تسجيل الرغبات — المرحلة الأولى</span>
-        <b>من 5 لـ 9 أغسطس</b>
-        <span class="st-s">بيقفل 7 مساءً آخر يوم · 75 رغبة إجبارية</span>
+        <span class="st-k">🔴 تسجيل الرغبات — المرحلة الأولى</span>
+        <b>مفتوح دلوقتي — لحد 9 أغسطس</b>
+        <span class="st-s">بيقفل 7 مساءً يوم الأحد · 75 رغبة إجبارية ·
+          <a href="https://tansik.digital.gov.eg/" target="_blank" rel="noopener"
+             style="color:var(--near);font-weight:700">ادخل سجّل دلوقتي</a></span>
       </div>
       <div class="st wait">
         <span class="st-k">الحدود الدنيا للخاصة والأهلية</span>
@@ -1394,13 +1492,13 @@ th{letter-spacing:.02em}
         <span class="st-s">مجلسا الجامعات الخاصة والأهلية هيجتمعوا بعد نتيجة المرحلة الأولى — وأي نسب متداولة دلوقتي استرشادية</span>
       </div>
       <div class="st done">
-        <span class="st-k">🆕 التقديم في الأهلية بدأ</span>
-        <b>شرق بورسعيد فتحت 3 أغسطس</b>
-        <span class="st-s">رسوم التقديم 1520 ج غير مستردة · بطاقات بنكية Debit/Credit بس — مفيش إنستاباي ولا محافظ ولا «ميزة»</span>
+        <span class="st-k">🆕 التقديم في الأهلية شغّال</span>
+        <b>الزقازيق · بنها · شرق بورسعيد فتحوا</b>
+        <span class="st-s">الزقازيق الأهلية إلكتروني لحد 7 أغسطس · شرق بورسعيد فتحت 3 أغسطس برسوم تقديم 1520 ج غير مستردة (بطاقات بنكية بس)</span>
       </div>
     </div>
     <p class="status-note">
-      <b>الخلاصة:</b> الحد الأدنى <b>للمرحلة الأولى 2026</b> اتعلن رسميًا (تحت 👇)، لكن <b>حدود كل كلية على حدة</b> لسه أرقام <b>2025</b> كمؤشر استرشادي —
+      <b>الخلاصة:</b> الحد الأدنى <b>للمرحلة الأولى 2026</b> اتعلن رسميًا (تحت 👇) و<b>تسجيل الرغبات مفتوح من 5 لـ 9 أغسطس</b>، لكن <b>حدود كل كلية على حدة</b> لسه أرقام <b>2025</b> كمؤشر استرشادي —
       وحدود الخاصة والأهلية لسه مأعلنتش. <b>المصروفات أرقام 2026/2027 حقيقية</b> معلنة من الجامعات نفسها.
     </p>
   </div>
@@ -1458,7 +1556,7 @@ th{letter-spacing:.02em}
   </section>
 
   <div class="chips-box">
-    <h3>✅ 33 جهة أعلنت مصروفاتها رسميًا لـ 2026/2027 + الأكاديمية العربية (تطبق مؤشرات تنسيق 2025)</h3>
+    <h3>✅ 35 جهة أعلنت مصروفاتها رسميًا لـ 2026/2027 + الأكاديمية العربية (تطبق مؤشرات تنسيق 2025)</h3>
     <div class="chips" id="announced">
       <button type="button" data-q="القاهرة الأهلية">القاهرة الأهلية</button>
       <button type="button" data-q="حلوان">حلوان الأهلية</button>
@@ -1492,16 +1590,18 @@ th{letter-spacing:.02em}
       <button type="button" data-q="مصر الجديدة">مصر الجديدة (NEU)</button>
       <button type="button" data-q="الأهرام الكندية">الأهرام الكندية</button>
       <button type="button" data-q="العبور">العبور</button>
+      <button type="button" data-q="الزقازيق الأهلية">الزقازيق الأهلية 🆕</button>
+      <button type="button" data-q="جنوب الوادي">جنوب الوادي الأهلية 🆕</button>
       <a href="#aast">الأكاديمية العربية (AAST)</a>
     </div>
-    <p class="chips-hint">اضغط على أي جامعة تشوف نسبها ومصروفاتها في جدول واحد. <b>+ 4 جهات جديدة أعلنت مطلع أغسطس</b> — عين شمس الأهلية ومصر الجديدة والأهرام الكندية والعبور، فوق الـ13 جامعة أهلية اللي أعلنت من 29 يوليو. <b>فرع هيرتفوردشير البريطانية</b> مصروفاته في قسم «بطاقات المصروفات» تحت (مش في القائمة المعتمدة فمالوش صفحة هنا).</p>
+    <p class="chips-hint">اضغط على أي جامعة تشوف نسبها ومصروفاتها في جدول واحد. <b>+ جامعتين جداد أعلنوا أول أغسطس</b> — الزقازيق الأهلية وجنوب الوادي الأهلية، فوق عين شمس الأهلية ومصر الجديدة والأهرام الكندية والعبور والـ13 جامعة أهلية اللي أعلنت من 29 يوليو. <b>فرع هيرتفوردشير البريطانية</b> مصروفاته في قسم «بطاقات المصروفات» تحت (مش في القائمة المعتمدة فمالوش صفحة هنا).</p>
   </div>
 
 
   <!-- ============ تنبيه حالة البيانات ============ -->
   <div class="notice">
     <span class="notice-ic">!</span>
-    <p><strong>حالة البيانات (3 أغسطس 2026):</strong> <strong>الحد الأدنى للمرحلة الأولى الحكومية اتعلن رسميًا</strong> — علمي علوم 91.25% وعلمي رياضة 86.09% وأدبي 71.56% (شوف قسم «المرحلة الأولى 2026» فوق). لكن <strong>الحد الأدنى لكل كلية على حدة</strong> بيتحدد بعد ما الرغبات تتقفل يوم 9 أغسطس، و<strong>الحدود الدنيا للجامعات الخاصة والأهلية لسه مأعلنتش</strong> — مجلساهم بيجتمعوا بعد نتيجة المرحلة الأولى.
+    <p><strong>حالة البيانات (5 أغسطس 2026):</strong> <strong>الحد الأدنى للمرحلة الأولى الحكومية اتعلن رسميًا</strong> — علمي علوم 91.25% وعلمي رياضة 86.09% وأدبي 71.56% (شوف قسم «المرحلة الأولى 2026» فوق)، و<strong>تسجيل الرغبات مفتوح من 5 لـ 9 أغسطس</strong>. لكن <strong>الحد الأدنى لكل كلية على حدة</strong> بيتحدد بعد ما الرغبات تتقفل يوم 9 أغسطس، و<strong>الحدود الدنيا للجامعات الخاصة والأهلية لسه مأعلنتش</strong> — مجلساهم بيجتمعوا بعد نتيجة المرحلة الأولى.
     <br><br>عشان كده كل نسب <strong>الكليات</strong> اللي في الجداول تحت هي <strong>أرقام 2025 الرسمية</strong> كمؤشر استرشادي للتخطيط — بينما <strong>المصروفات أرقام 2026/2027 حقيقية</strong> معلنة من الجامعات نفسها.</p>
   </div>
 
@@ -1544,11 +1644,11 @@ th{letter-spacing:.02em}
     <div class="sec-head">
       <span class="sec-kicker">الجدول الأساسي</span>
       <h2>الحد الأدنى الشامل — حكومي + الفئات الأربعة</h2>
-      <p><span class="pill p-near">أرقام 2025 الرسمية</span> الخانة الرمادية = أقل تنسيق اتقبل في الجامعات الحكومية السنة اللي فاتت، كنسبة <strong>من أصل 320 درجة</strong> ومعاها اسم الكلية صاحبة أقل حد. جنبها الحد الأدنى لكل فئة من فئات الخاص والأهلي.</p>
+      <p><span class="pill p-near">أرقام 2025 الرسمية</span> الخانة الرمادية = أقل تنسيق اتقبل في الجامعات الحكومية السنة اللي فاتت، كنسبة <strong>من أصل 320 درجة</strong> ومعاها اسم الكلية صاحبة أقل حد. جنبها الحد الأدنى لكل فئة من فئات <strong>الجامعات الخاصة والأهلية</strong>. وآخر <strong>6 صفوف كليات حكومية بس</strong> (تربية · آداب · دار علوم · خدمة اجتماعية · تربية رياضية) — مالهاش فئات لأنها مش موجودة في الخاص والأهلي.</p>
     </div>
 
     <div class="legend">
-      <h3>فئات الجامعات</h3>
+      <h3>فئات الجامعات <em>(الفئات الأربعة دي كلها جامعات خاصة وأهلية — مش حكومية)</em></h3>
       <p><span class="tag-n n1">1</span><b>فئة 1:</b> الملك سلمان الدولية · سيناء الخاصة (بفرعيها) · الوادي الجديد الأهلية · شرق بورسعيد الأهلية <em>— أقل حدود دنيا في الجمهورية</em></p>
       <p><span class="tag-n n2">2</span><b>فئة 2:</b> الجلالة · العلمين الدولية</p>
       <p><span class="tag-n n3">3</span><b>فئة 3:</b> باقي الجامعات الخاصة الـ37 + الأقصر الأهلية + دمنهور الأهلية</p>
@@ -1559,14 +1659,27 @@ th{letter-spacing:.02em}
       <table id="grid">
         <thead>
           <tr>
-            <th style="text-align:right;padding-inline-start:16px">الكلية</th>
-            <th>الشعبة المطلوبة</th>
-            <th style="background:#2A4463;border-inline:2px solid #101D2C">حكومي 2025</th>
+            <th rowspan="2" style="text-align:right;padding-inline-start:16px">الكلية</th>
+            <th rowspan="2">الشعبة المطلوبة</th>
+            <th rowspan="2" style="background:#2A4463;border-inline:2px solid #101D2C">حكومي 2025</th>
+            <th colspan="4" style="background:#7A5F37;font-size:.76rem;letter-spacing:.02em">
+              (دي الجامعات الخاصة والأهلية)</th>
+          </tr>
+          <tr>
             <th>فئة 1</th><th>فئة 2</th><th>فئة 3</th><th>فئة 4</th>
           </tr>
         </thead>
         <tbody id="gridBody"></tbody>
       </table>
+    </div>
+
+    <div class="callout" style="border-inline-start-color:var(--ok);margin-bottom:12px">
+      <b>🆕 آخر 6 صفوف في الجدول = كليات حكومية بس.</b>
+      التربية والآداب ودار العلوم والخدمة الاجتماعية والتربية الرياضية <b>مالهاش نظير في الجامعات الخاصة والأهلية</b>،
+      عشان كده خانة الفئات عندها مقفولة. والأرقام دي هي <b>الحدود الدنيا للمرحلة الثالثة 2025 للشعبة الأدبية (نظام حديث)</b>
+      زي ما أعلنها مكتب التنسيق يوم 9 سبتمبر 2025 — يعني أقل حد اتقبل فعلًا في التنسيق كله.
+      <b>ملحوظة:</b> طلبة علمي علوم ورياضة بيقدروا يدخلوا الكليات دي برضه، بس الرقم المعروض هنا هو رقم <b>الأدبي</b>
+      لأنه اللي معلن رسميًا — حد شعبتك بيظهر لك على موقع التنسيق نفسه.
     </div>
 
     <div class="callout">
@@ -1622,6 +1735,47 @@ th{letter-spacing:.02em}
       <p>موقع التنسيق بيلزمك تختار كليات <strong>المجموعة (أ) الأولانية، وبعدين (ب)، وبعدين (ج)</strong> — وترتيب غلط ممكن يوديك كلية أبعد أو يضيّع عليك فرصة أقرب. اختار محافظتك وقطاعاتك المفضلة، وهنطلعلك قايمة مرتّبة جاهزة تمشي عليها وإنت بتسجّل.</p>
     </div>
 
+    <div class="wl-links">
+      <a class="main" href="https://tansik.digital.gov.eg/" target="_blank" rel="noopener">
+        🔗 سجّل رغباتك على موقع التنسيق الرسمي</a>
+      <a class="alt" href="https://vt.tiktok.com/ZS4aTnoUn/" target="_blank" rel="noopener">
+        🎬 فيديو: خطوات التسجيل بالصور</a>
+      <a class="alt" href="https://gate.ahram.org.eg/News/5882826.aspx" target="_blank" rel="noopener">
+        📄 دليل الخطوات — بوابة الأهرام</a>
+    </div>
+
+    <details class="fold fold-steps" style="margin-top:0;margin-bottom:16px">
+      <summary>
+        <span class="fold-txt">
+          <b>📝 خطوات تسجيل الرغبات على موقع التنسيق — بالترتيب</b>
+          <span>9 خطوات رسمية، اقراها مرة قبل ما تفتح الموقع</span>
+        </span>
+        <span class="fold-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+            stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          <em>اضغط للعرض</em>
+        </span>
+      </summary>
+      <div class="fold-body">
+        <ol class="steps">
+          <li>ادخل على موقع التنسيق الإلكتروني الرسمي: <b>tansik.digital.gov.eg</b> (بلاش أي لينك تاني).</li>
+          <li>اختار خدمة <b>تنسيق الثانوية العامة 2026</b>، وبعدين <b>تسجيل الرغبات</b>.</li>
+          <li>اكتب <b>رقم الجلوس</b> و<b>الرقم السري</b> المطبوع تحت استمارة النجاح + الرقم التأكيدي الظاهر على الشاشة.</li>
+          <li>راجع بياناتك (الاسم · المجموع · الشعبة · الإدارة التعليمية) وتأكد إنها صح.</li>
+          <li>سجّل رغباتك: إما <b>حسب قطاع التخصص</b> أو <b>حسب الجامعة</b> — وكل قسم أو برنامج بيتحسب رغبة مستقلة.</li>
+          <li>راعي <b>قواعد التوزيع الجغرافي</b>: خلّص مجموعة (أ) الأول، بعدين (ب)، بعدين (ج).</li>
+          <li>كمّل الـ<b>75 رغبة</b> كاملة — النظام مش هيخليك تنهي التسجيل قبل كده.</li>
+          <li>راجع القايمة كويس، وبعدين اضغط <b>حفظ</b> — لو قفلت المتصفح قبل الحفظ هتضيع منك.</li>
+          <li>احفظ أو اطبع <b>إيصال التسجيل</b> (فيه رقم مرجعي وتاريخ وساعة) واحتفظ بيه.</li>
+        </ol>
+        <div class="tool-warn" style="margin-top:14px">
+          ⏰ <b>المرحلة الأولى شغالة من الأربعاء 5 أغسطس لحد الأحد 9 أغسطس 2026</b>، والباب بيقفل <b>7 مساءً</b> آخر يوم.
+          تقدر تعدّل رغباتك عدد مرات مفتوح، والمعتمد هو <b>آخر تعديل حفظته</b> قبل الغلق.
+          والتسجيل شغال 24 ساعة من أي جهاز، أو من معامل الجامعات الحكومية من 9 ص لـ 3 م مجانًا.
+        </div>
+      </div>
+    </details>
+
     <div class="tool-card">
       <div class="tool-grid">
         <div class="tool-field">
@@ -1669,6 +1823,12 @@ th{letter-spacing:.02em}
         ٣) جوه المجموعة الواحدة، ترتيب الجامعات <b>حر ومتساوي</b> — رتّبهم زي ما يناسبك.<br>
         ٤) نظام التنسيق الإلكتروني بيطبّق القواعد دي <b>آليًا</b> وإنت بتسجّل — القايمة دي بتخليك جاهز قبل ما تدخل الموقع فمتتلخبطش.
       </div>
+      <div class="tool-note" style="background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok-line)">
+        🆕 <b>لطلبة أدبي:</b> ضفنا <b>التربية · التربية ابتدائي · الآداب · دار العلوم · الخدمة الاجتماعية · التربية الرياضية</b>
+        بحدودها الرسمية للمرحلة الثالثة 2025، وكمان <b>الاقتصاد وإدارة الأعمال = التجارة</b>.
+        فيه كليات تانية بتتاح في التنسيق زي <b>التربية النوعية والاقتصاد المنزلي</b> — مضفناهاش
+        لأن مفيش رقم رسمي موثّق لحدها الأدنى، فضيفها بنفسك على موقع التنسيق لو ظهرت قدامك.
+      </div>
       <div class="tool-warn">
         ⚠️ <b>مهم جدًا:</b> مش كل كلية موجودة في كل جامعة — فلو كلية من القايمة مش ظاهرة قدامك جوه موقع التنسيق في جامعة معينة، يبقى مش متاحة فيها: عدّيها وامشي على اللي بعدها بنفس الترتيب. وترشيح القطاعات المتاحة ليك مبني على <b>حدود 2025</b> كمؤشر — أرقام 2026 بتتحدد رسميًا مع كل مرحلة على موقع التنسيق الإلكتروني <a href="https://tansik.digital.gov.eg/application/" target="_blank" rel="noopener" style="color:var(--near);font-weight:700">tansik.digital.gov.eg</a>.
       </div>
@@ -1682,7 +1842,7 @@ th{letter-spacing:.02em}
       <h2>كل مؤسسات التعليم العالي المعتمدة</h2>
       <p>كل قطاع في قسم لوحده: الجامعات الحكومية والخاصة والأهلية والتكنولوجية والدولية،
       والمعاهد العليا والفنية. اضغط على أي قطاع يفتحلك محتواه —
-      والجامعات جواها بتيجي <strong>بالحد الأدنى والمصروفات في جدول واحد</strong>.</p>
+      والجامعات جواها بتيجي <strong>بالحد الأدنى والمصروفات والموقع الرسمي في مكان واحد</strong>.</p>
     </div>
 
     <div class="filters">
@@ -1827,7 +1987,7 @@ th{letter-spacing:.02em}
       <div id="scOut"></div>
 
       <div class="tool-warn">⚠️ «مؤهل مبدئيًا» يعني إنك مستوفي الشروط الأساسية المعلنة — مش يعني قبول مضمون: أغلب المنح تنافسية وبتبص كمان على الحاجة المالية والمقابلة الشخصية. والمواعيد والشروط بتتحدث كل سنة، فـ<b>المرجع النهائي هو الموقع الرسمي لكل جهة</b> (الروابط جوه كل كارت).</div>
-      <p class="tool-src" id="scSrc"><b>المصادر:</b> مؤسسة ساويرس للتنمية الاجتماعية (إعلان منحة التفوق لخريجي الثانوية 2026/2027) · مؤسسة الألفي (برنامج المنح الجامعية STEM — دورة 2025/2026) · وزارة التعليم العالي: مبادرة دعم تكافؤ الفرص <a href="https://egyaid.mohesr.gov.eg/" target="_blank" rel="noopener">egyaid.mohesr.gov.eg</a> · الجامعة الأمريكية بالقاهرة: صفحات المنح الرسمية · بيان المجلس الأعلى للجامعات الأهلية بشأن منح الـ10% (يوليو 2025) وإعلانات الجامعات الأهلية للأوائل («الوطن»، يوليو 2026).</p>
+      <p class="tool-src" id="scSrc"><b>المصادر:</b> مؤسسة ساويرس للتنمية الاجتماعية (إعلان منحة التفوق لخريجي الثانوية 2026/2027) · مؤسسة الألفي (برنامج المنح الجامعية STEM — دورة 2025/2026) · وزارة التعليم العالي: مبادرة دعم تكافؤ الفرص <a href="https://egyaid.mohesr.gov.eg/" target="_blank" rel="noopener">egyaid.mohesr.gov.eg</a> · الجامعة الأمريكية بالقاهرة: صفحات المنح الرسمية · بيان المجلس الأعلى للجامعات الأهلية بشأن منح الـ10% (يوليو 2025) وإعلانات الجامعات الأهلية للأوائل («الوطن»، يوليو 2026) · <b>محدَّث 5 أغسطس 2026:</b> إعلان الجامعة المصرية للتعلم الإلكتروني الأهلية لفتح باب المنح (أغسطس 2026) · إعلانات منح جامعة النيل الأهلية وجامعة القاهرة والجامعة البريطانية والألمانية بالقاهرة — «المصري اليوم» و«بوابة الأهرام» و«مصراوي» (يوليو/أغسطس 2026).</p>
     </div>
   </section>
 
@@ -1975,6 +2135,7 @@ th{letter-spacing:.02em}
         <b>إضافي:</b> 300$ رسوم التحاق غير مستردة · 450$ رسوم معامل في الفصل الأول (800$ للقطاع الطبي) · 200$ في الفترة التانية و120$ في الرابعة بالدولار الحقيقي · زيادة سنوية 150$ + حق رفع سعر الدولار الداخلي حتى 15% سنويًا.
         <b>النقل البحري:</b> إقامة وتغذية إجبارية 3270$ للفصل في أول 4 فصول بسعر صرف 25 جنيه.
       </div>
+      <div class="fee-src">🌐 الموقع الرسمي: <a href="https://www.aast.edu" target="_blank" rel="noopener" style="color:var(--navy-3);font-weight:700">aast.edu</a></div>
     </div>
   </section>
 
@@ -2034,14 +2195,16 @@ th{letter-spacing:.02em}
     <h3>الدليل ده فادك؟ شاركه</h3>
     <p>فيه زمايلك دلوقتي بيختاروا كلياتهم بالسمع. ابعتلهم اللينك.</p>
     <div class="share-btns" id="shareBtns"></div>
-    <p class="share-note">المشاركة بتفتح التطبيق برسالة جاهزة — إنت بتختار مين يوصله.</p>
+    <p class="share-note">المشاركة بتفتح التطبيق برسالة جاهزة — إنت بتختار مين يوصله.
+      <br>وعندنا كمان <a href="https://t.me/+HYeYbf346ylhMWM8" target="_blank" rel="noopener"
+      style="color:#7FD0F2;font-weight:700">جروب تليجرام</a> فيه كل تحديثات التنسيق أول بأول.</p>
   </div>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <p><b>المصادر:</b> نشرة المصروفات الدراسية 2026/2027 — الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري (aast.edu) · إعلانات المصروفات الرسمية للجامعات الأهلية 2026/2027 — «المصري اليوم» (22 و24 يوليو 2026) لجامعات المنوفية وبني سويف والسويس ودمياط · «بوابة الأهرام» (10 يوليو 2026) لجامعة سوهاج نقلًا عن نائب رئيس الجامعة · و«الأسبوع» و«الوطن» و«الدستور» و«المواطن المصري» (يوليو 2026) · مصروفات الجامعات الخاصة والأهلية 2026/2027 — «العين الإخبارية» (29 يوليو 2026) · الحدود الدنيا 2025 — الجلسة المشتركة لمجلسي الجامعات الخاصة والأهلية، أغسطس 2025، نقلًا عن «فيتو» و«المصري اليوم» و«اليوم السابع» · مصروفات جامعة مصر الجديدة (NEU) — «بوابة أخبار اليوم» و«مصراوي» يوليو 2026 · مصروفات جامعة العبور — «مصراوي» 27 يوليو 2026 · مصروفات جامعة الأهرام الكندية — «مصراوي» و«شبابيك» 2026 · مصروفات جامعة عين شمس الأهلية — إعلان الجامعة في معرض EDU GATE · فتح التقديم بجامعة شرق بورسعيد الأهلية — 3 أغسطس 2026 · القوائم المعتمدة (38 جامعة خاصة) — وزارة التعليم العالي والبحث العلمي، يوليو 2026.</p>
+    <p><b>المصادر:</b> نشرة المصروفات الدراسية 2026/2027 — الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري (aast.edu) · إعلانات المصروفات الرسمية للجامعات الأهلية 2026/2027 — «المصري اليوم» (22 و24 و25 يوليو 2026) لجامعات المنوفية وبني سويف والسويس ودمياط وجنوب الوادي · «بوابة الأهرام» (10 يوليو 2026) لجامعة سوهاج نقلًا عن نائب رئيس الجامعة · و«الأسبوع» و«الوطن» و«الدستور» و«المواطن المصري» (يوليو 2026) · مصروفات الجامعات الخاصة والأهلية 2026/2027 — «العين الإخبارية» (29 يوليو 2026) · الحدود الدنيا 2025 — الجلسة المشتركة لمجلسي الجامعات الخاصة والأهلية، أغسطس 2025، نقلًا عن «فيتو» و«المصري اليوم» و«اليوم السابع» · مصروفات جامعة مصر الجديدة (NEU) — «بوابة أخبار اليوم» و«مصراوي» يوليو 2026 · مصروفات جامعة العبور — «مصراوي» 27 يوليو 2026 · مصروفات جامعة الأهرام الكندية — «مصراوي» و«شبابيك» 2026 · مصروفات جامعة عين شمس الأهلية — إعلان الجامعة في معرض EDU GATE · <b>مصروفات جامعة الزقازيق الأهلية مع فتح التقديم — «الوطن» و«مصراوي» و«صوت الأمة» 1 أغسطس 2026</b> · <b>مصروفات جامعة بنها الأهلية — «اليوم السابع» 1 أغسطس 2026</b> · الحد الأدنى للمرحلة الأولى ومواعيد تسجيل الرغبات 2026 — بيان وزارة التعليم العالي والبحث العلمي (2 أغسطس 2026) منشور في «بوابة الأهرام» و«الدستور» و«الوطن» · فتح التقديم بجامعة شرق بورسعيد الأهلية — 3 أغسطس 2026 · <b>الحدود الدنيا للكليات الحكومية بس (تربية · آداب · دار علوم · خدمة اجتماعية · تربية رياضية) — إعلان مكتب تنسيق القبول بالجامعات لنتيجة المرحلة الثالثة 2025 للشعبة الأدبية نظام حديث، 9 سبتمبر 2025، منشور في «الدستور» و«المنهج»</b> · القوائم المعتمدة (38 جامعة خاصة + 32 أهلية) — وزارة التعليم العالي والبحث العلمي، يوليو 2026.</p>
     <p><b>مسار · MASAR</b> — دليل مساعد للتخطيط، مش مستند رسمي. قبل أي دفع أو تعاقد، اطلب نشرة المصروفات المكتوبة من عمادة القبول بالجامعة نفسها.</p>
   </div>
 </footer>
@@ -2065,6 +2228,7 @@ const CONFIG = {
   /* ---- 2) وسايل التواصل ---- */
   whatsapp:   '201026693750',     // بصيغة دولية بدون + ، سيبها '' لو مش عايز زرار واتساب
   telegram:   'controlunit666',   // اليوزرنيم بدون @ ، سيبها '' لو مش عايز زرار تليجرام
+  tgGroup:    'https://t.me/+HYeYbf346ylhMWM8',  // 👈 لينك جروب التليجرام
   msgText:    'السلام عليكم، حوّلت مصاريف دليل التنسيق ودي صورة الإيصال 👇',
 
   /* ---- 3) أكواد الدخول (1000 كود) ----
@@ -2274,12 +2438,22 @@ const FACULTIES = [
   {name:'الفنون الجميلة (فنون)',     sec:['أدبي','علوم','رياضة'], label:'كل الشعب',     gov:65.63, raw:210.0, govName:'فنون جميلة الأقصر', mins:[52,53,53,53], flag:true},
   {name:'اللغات والترجمة (الألسن)',  sec:['أدبي','علوم','رياضة'], label:'كل الشعب',     gov:77.34, raw:247.5, govName:'ألسن سوهاج (رياضة)', mins:[52,53,53,53], flag:true},
   {name:'الإعلام والاتصال',         sec:['أدبي','علوم','رياضة'], label:'كل الشعب',     gov:74.53, raw:238.5, govName:'إعلام جنوب الوادي (رياضة)', mins:[52,53,53,53], flag:true},
-  {name:'الاقتصاد وإدارة الأعمال',   sec:['أدبي','علوم','رياضة'], label:'كل الشعب',     gov:71.25, raw:228.0, govName:'تجارة انتساب سوهاج', mins:[52,53,53,53], flag:true},
+  {name:'الاقتصاد وإدارة الأعمال (التجارة)', sec:['أدبي','علوم','رياضة'], label:'كل الشعب', gov:71.25, raw:228.0, govName:'تجارة انتساب سوهاج', mins:[52,53,53,53], flag:true},
   {name:'الزراعة',                  sec:['علوم','رياضة'],        label:'علوم / رياضة', gov:63.91, raw:204.5, govName:'زراعة أسيوط (رياضة)', mins:[52,53,53,53], flag:true},
   {name:'الحقوق والدراسات القانونية',sec:['أدبي','علوم','رياضة'], label:'كل الشعب',     gov:63.59, raw:203.5, govName:'حقوق انتساب م.السادات', mins:[52,53,53,53], flag:true},
   {name:'الآثار',                   sec:['أدبي','علوم','رياضة'], label:'كل الشعب',     gov:63.59, raw:203.5, govName:'آثار سوهاج', mins:[52,53,53,53], flag:true},
   {name:'السياحة والفنادق',         sec:['أدبي','علوم','رياضة'], label:'كل الشعب',     gov:60.00, raw:192.0, govName:'سياحة وفنادق م.السادات', mins:[52,53,53,53], flag:true},
-  {name:'التكنولوجيا الحيوية',       sec:['علوم'],                label:'علمي علوم',    gov:null,  raw:null,  govName:'برنامج داخل كليات العلوم/الزراعة', mins:[53,54,55,56]}
+  {name:'التكنولوجيا الحيوية',       sec:['علوم'],                label:'علمي علوم',    gov:null,  raw:null,  govName:'برنامج داخل كليات العلوم/الزراعة', mins:[53,54,55,56]},
+
+  /* ── كليات حكومية بس (مفيش ليها نظير في الجامعات الخاصة والأهلية) ──
+     الأرقام دي حدود المرحلة الثالثة 2025 للشعبة الأدبية (نظام حديث)
+     زي ما أعلنها مكتب التنسيق يوم 9 سبتمبر 2025 — يعني أقل حد اتقبل فعليًا. */
+  {name:'التربية (عام)',             sec:['أدبي'], label:'أدبي', gov:72.65, raw:232.5, govName:'أعلى كليات المرحلة الثالثة أدبي', mins:null, govOnly:true},
+  {name:'التربية (تعليم ابتدائي)',    sec:['أدبي'], label:'أدبي', gov:65.46, raw:209.5, govName:'المرحلة الثالثة 2025 — أدبي', mins:null, govOnly:true},
+  {name:'الآداب',                    sec:['أدبي'], label:'أدبي', gov:63.75, raw:204.0, govName:'انتظام 63.75% · انتساب 63.59%', mins:null, govOnly:true},
+  {name:'دار العلوم',                sec:['أدبي'], label:'أدبي', gov:62.18, raw:199.0, govName:'المرحلة الثالثة 2025 — أدبي', mins:null, govOnly:true},
+  {name:'الخدمة الاجتماعية',          sec:['أدبي'], label:'أدبي', gov:55.90, raw:178.9, govName:'المرحلة الثالثة 2025 — أدبي', mins:null, govOnly:true},
+  {name:'التربية الرياضية (علوم الرياضة)', sec:['أدبي'], label:'أدبي', gov:50.00, raw:160.0, govName:'أقل حد في التنسيق كله · باختبار قدرات', mins:null, govOnly:true}
 ];
 
 const NOTE_THEORY = 'الجامعة دي ليها استثناء في الكليات النظرية — الحد الأدنى فيها أعلى من باقي الفئة 3 (55% بدل 53% حسب «فيتو»).';
@@ -2302,11 +2476,11 @@ const ALL_UNIS = [
   {n:'جامعة المنوفية الأهلية',               t:'أهلية', tier:4, fee:'ok'},
   {n:'جامعة بني سويف الأهلية',               t:'أهلية', tier:4, fee:'ok'},
   {n:'جامعة أسيوط الأهلية',                  t:'أهلية', tier:4, fee:'ok'},
-  {n:'جامعة جنوب الوادي الأهلية',             t:'أهلية', tier:4, fee:null, note:NOTE_T4},
+  {n:'جامعة جنوب الوادي الأهلية',             t:'أهلية', tier:4, fee:'ok', note:NOTE_T4},
   {n:'جامعة المنيا الأهلية',                 t:'أهلية', tier:4, fee:'ok', note:NOTE_T4},
   {n:'جامعة شرق بورسعيد الأهلية',             t:'أهلية', tier:1, fee:null, note:'من أقل الحدود الدنيا في الجمهورية.'},
   {n:'جامعة الإسكندرية الأهلية',             t:'أهلية', tier:4, fee:'ok', note:NOTE_T4},
-  {n:'جامعة الزقازيق الأهلية',               t:'أهلية', tier:4, fee:null, note:NOTE_T4},
+  {n:'جامعة الزقازيق الأهلية',               t:'أهلية', tier:4, fee:'ok', note:NOTE_T4},
   {n:'جامعة الإسماعيلية الجديدة الأهلية',    t:'أهلية', tier:4, fee:'ok', note:NOTE_T4},
   {n:'جامعة السويس الأهلية',                 t:'أهلية', tier:4, fee:'ok'},
   {n:'جامعة دمنهور الأهلية',                 t:'أهلية', tier:3, fee:'ok', note:'واحدة من جامعتين أهليتين بس بيتحسبوا مع الجامعات الخاصة في الحدود الدنيا.'},
@@ -2361,6 +2535,62 @@ const ALL_UNIS = [
   {n:'جامعة شرق العاصمة',                              t:'خاصة', tier:3, fee:null},
   {n:'جامعة مصر الجديدة (NEU)',                        t:'خاصة', tier:3, fee:'ok', note:'انضمت رسميًا للقائمة المعتمدة — القائمة بقت 38 جامعة خاصة.'}
 ];
+
+/* المواقع الرسمية للجامعات — أي جامعة مش في القايمة دي بيظهر لها زرار بحث تلقائي */
+const UNI_SITES = {
+  /* أهلية */
+  'جامعة الملك سلمان الدولية':'ksiu.edu.eg',
+  'جامعة المنصورة الجديدة':'nmu.edu.eg',
+  'الجامعة المصرية للتعلم الإلكتروني الأهلية':'eelu.edu.eg',
+  'جامعة مصر للمعلوماتية (EUI)':'eui.edu.eg',
+  'جامعة حلوان الأهلية':'hnu.edu.eg',
+  'جامعة بنها الأهلية':'bnu.edu.eg',
+  'جامعة أسيوط الأهلية':'asnu.edu.eg',
+  'جامعة شرق بورسعيد الأهلية':'epnu.edu.eg',
+  'جامعة الإسكندرية الأهلية':'anu.edu.eg',
+  'جامعة الزقازيق الأهلية':'znu.edu.eg',
+  'جامعة دمنهور الأهلية':'dnu.edu.eg',
+  'جامعة عين شمس الأهلية':'nasu.edu.eg',
+  'جامعة طنطا الأهلية':'tnu.edu.eg',
+  'جامعة دمياط الأهلية':'dam-nu.edu.eg',
+  /* خاصة */
+  'جامعة 6 أكتوبر (O6U)':'o6u.edu.eg',
+  'جامعة أكتوبر للعلوم الحديثة والآداب (MSA)':'msa.edu.eg',
+  'جامعة مصر للعلوم والتكنولوجيا (MUST)':'must.edu.eg',
+  'جامعة مصر الدولية (MIU)':'miuegypt.edu.eg',
+  'الجامعة الألمانية بالقاهرة (GUC)':'guc.edu.eg',
+  'جامعة الأهرام الكندية (ACU)':'acu.edu.eg',
+  'الجامعة البريطانية في مصر (BUE)':'bue.edu.eg',
+  'الجامعة الحديثة للتكنولوجيا والمعلومات (MTI)':'mti.edu.eg',
+  'جامعة سيناء':'su.edu.eg',
+  'جامعة فاروس بالإسكندرية':'pua.edu.eg',
+  'جامعة النهضة ببني سويف (NUB)':'nub.edu.eg',
+  'جامعة المستقبل (FUE)':'fue.edu.eg',
+  'الجامعة المصرية الروسية (ERU)':'eru.edu.eg',
+  'جامعة الدلتا للعلوم والتكنولوجيا بجمصة':'deltauniv.edu.eg',
+  'جامعة هليوبوليس':'hu.edu.eg',
+  'جامعة الجيزة الجديدة (NGU)':'ngu.edu.eg',
+  'جامعة دراية بالمنيا (DUR)':'deraya.edu.eg',
+  'جامعة بدر بالقاهرة (BUC)':'buc.edu.eg',
+  'جامعة حورس':'horus.edu.eg',
+  'الجامعة المصرية الصينية':'ecu.edu.eg',
+  'جامعة ميريت':'merit.edu.eg',
+  'جامعة سفنكس':'sphinx.edu.eg',
+  'جامعة السلام':'suc.edu.eg',
+  'جامعة بدر بأسيوط':'bua.edu.eg',
+  'جامعة الصالحية الجديدة':'sgu.edu.eg',
+  'جامعة مايو':'muc.edu.eg',
+  'جامعة الريادة للعلوم والتكنولوجيا بالسادات':'rst.edu.eg',
+  'جامعة باديا':'badyauni.edu.eg',
+  'جامعة اللوتس':'lotus.edu.eg'
+};
+
+function uniSiteLink(name){
+  const d = UNI_SITES[name];
+  if(d) return '🌐 الموقع الرسمي: <a href="https://' + d + '" target="_blank" rel="noopener" style="color:var(--navy-3);font-weight:700">' + d + '</a>';
+  return '🔎 <a href="https://www.google.com/search?q=' + encodeURIComponent('الموقع الرسمي ' + name) +
+    '" target="_blank" rel="noopener" style="color:var(--navy-3);font-weight:700">دوّر على الموقع الرسمي للجامعة</a>';
+}
 
 const UNIS = [
   {name:'جامعة القاهرة الأهلية', type:'أهلية', unit:'سنوي', conf:'ok',
@@ -2448,11 +2678,12 @@ const UNIS = [
    src:'إعلان الجامعة 2026-2027 — «العين الإخبارية» 29 يوليو 2026',
    rows:[['الطب البشري',160000],['طب الأسنان',135000],['العلاج الطبيعي',100000],['الصيدلة',95000],
          ['هندسة الذكاء الاصطناعي',80000],['التمريض',55000],['التجارة وإدارة الأعمال',45000]]},
-  {name:'جامعة بنها الأهلية', type:'أهلية', unit:'سنوي', conf:'ok',
-   src:'إعلان الجامعة 2026-2027 — «العين الإخبارية» 29 يوليو 2026',
-   rows:[['الطب البشري',155000],['طب الأسنان',125000],['العلاج الطبيعي',110000],['الطب البيطري',80000],
-         ['الهندسة',75000],['الحاسبات والمعلومات والذكاء الاصطناعي',75000],['الفنون والتصميم',60000],
-         ['التجارة وإدارة الأعمال',50000],['علوم الطاقة',50000]]},
+  {name:'جامعة بنها الأهلية', type:'أهلية', unit:'سنوي', conf:'warn',
+   src:'إعلان الجامعة مع فتح التقديم الإلكتروني — «اليوم السابع» 1 أغسطس 2026 · وأرقام «العين الإخبارية» 29 يوليو 2026 أقل شوية، فعرضنا الاتنين كنطاق · أكّد من الجامعة',
+   rows:[['الطب البشري',155000,170000],['طب الأسنان',125000,130000],['العلاج الطبيعي',110000],
+         ['الطب البيطري',80000],['الهندسة',75000,80000],
+         ['الحاسبات والمعلومات والذكاء الاصطناعي',75000,80000],['الفنون البصرية والتصميم',60000],
+         ['التجارة وإدارة الأعمال',50000,52000],['علوم الطاقة',50000]]},
   {name:'جامعة الملك سلمان الدولية', type:'أهلية', unit:'سنوي', conf:'ok',
    src:'إعلان الجامعة 2026-2027 — «العين الإخبارية» 29 يوليو 2026',
    rows:[['الطب البشري',152000],['طب الأسنان',125000],['العلاج الطبيعي',93000],
@@ -2474,6 +2705,20 @@ const UNIS = [
    src:'إعلان الجامعة 2026-2027 — «العين الإخبارية» 29 يوليو 2026',
    rows:[['الطب البيطري',70000],['التمريض',60000],['الحاسبات والمعلومات والذكاء الاصطناعي',60000],
          ['التجارة وإدارة الأعمال',35000]]},
+  {name:'جامعة الزقازيق الأهلية', type:'أهلية', unit:'سنوي', conf:'ok',
+   src:'إعلان الجامعة 2026-2027 مع فتح التقديم الإلكتروني (29 يوليو – 7 أغسطس 2026) — «الوطن» و«مصراوي» و«صوت الأمة» 1 أغسطس 2026',
+   rows:[['الطب البشري (الطب والجراحة)',160000],['طب وجراحة الفم والأسنان',130000],
+         ['الصيدلة الإكلينيكية (Pharm D)',105000],['هندسة الميكاترونيات',75000],
+         ['الذكاء الاصطناعي وعلوم البيانات (الحاسبات)',75000],
+         ['هندسة الإنشاءات وإدارة التشييد',70000],['نظم معلومات الطيران (الحاسبات)',70000],
+         ['المعلوماتية الطبية (الحاسبات)',70000],['التمريض',65000]]},
+  {name:'جامعة جنوب الوادي الأهلية', type:'أهلية', unit:'سنوي', conf:'warn',
+   src:'إعلان الجامعة 2026-2027 — «المصري اليوم» 25 يوليو 2026 و«الوطن» 31 يوليو 2026 · المصدرين بينهم فرق في أرقام الطب والأسنان فعرضناهم كنطاق · قد تُضاف رسوم إدارية',
+   rows:[['الطب والجراحة',150000,160000],['طب الفم والأسنان',120000,125000],
+         ['العلاج الطبيعي',100000],['الصيدلة',100000],['التمريض',60000],
+         ['الحاسبات والذكاء الاصطناعي',60000],['الهندسة',58000],
+         ['العلوم الإدارية والمالية (إنجليزي)',45000],['العلوم الإدارية والمالية (عربي)',39000],
+         ['الألسن (إنجليزي)',35000],['الألسن (فرنسي)',30000]]},
   {name:'الجامعة المصرية للتعلم الإلكتروني الأهلية', type:'أهلية', unit:'سنوي', conf:'ok',
    src:'إعلان الجامعة 2026-2027 — «العين الإخبارية» 29 يوليو 2026',
    rows:[['الحاسبات والمعلومات (علمي علوم)',64000],['الحاسبات والمعلومات (علمي رياضة)',61000],
@@ -2839,7 +3084,7 @@ const FACMATCH = {
   'الفنون الجميلة (فنون)':       {any:['الفنون والتصميم','الفنون الجميلة'], not:['التطبيقية']},
   'اللغات والترجمة (الألسن)':    {any:['الألسن','اللغات','الترجمة'], not:[]},
   'الإعلام والاتصال':           {any:['الإعلام','إعلام','الصحافة','التلفزيوني'], not:[]},
-  'الاقتصاد وإدارة الأعمال':     {any:['الاقتصاد','إدارة الأعمال','التجارة','الأعمال',
+  'الاقتصاد وإدارة الأعمال (التجارة)': {any:['الاقتصاد','إدارة الأعمال','التجارة','الأعمال',
                                       'العلوم الإدارية','الإدارة'], not:[]},
   'الزراعة':                    {any:['الزراعة'], not:[]},
   'الحقوق والدراسات القانونية':  {any:['الحقوق','القانون','الدراسات القانونية'], not:[]},
@@ -2867,7 +3112,7 @@ const $     = id => document.getElementById(id);
 const esc   = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const scrollTo_ = id => { const el = $(id); if(el && el.scrollIntoView) el.scrollIntoView({behavior:'smooth', block:'start'}); };
 
-const TIERNAME = ['فئة 1','فئة 2','فئة 3','فئة 4'];
+const TIERNAME = ['فئة 1 (خاصة وأهلية)','فئة 2 (أهلية)','فئة 3 (خاصة)','فئة 4 (أهلية)'];
 const CONF = {
   ok:  {c:'p-ok',   t:'معلنة رسميًا'},
   warn:{c:'p-near', t:'بيانات ناقصة'},
@@ -2903,8 +3148,12 @@ function buildGrid(){
       : `<td class="cell gov-cell" data-min="101">
            <span class="rw" style="font-size:.8rem;color:var(--text)">${esc(f.govName)}</span>
          </td>`;
-    const tiers = f.mins.map(m=>`<td class="cell" data-min="${m}">
-        <span class="pc">${m}%</span><span class="rw">${rawOf(m)}</span></td>`).join('');
+    const tiers = f.mins
+      ? f.mins.map(m=>`<td class="cell" data-min="${m}">
+        <span class="pc">${m}%</span><span class="rw">${rawOf(m)}</span></td>`).join('')
+      : `<td class="cell govonly" colspan="4" data-min="101">
+           <span class="rw" style="font-size:.78rem;color:var(--muted)">
+             حكومي بس — الكلية دي مش موجودة في الجامعات الخاصة والأهلية</span></td>`;
     const dot = f.flag ? '<span class="dot" title="مصادر متضاربة"></span>' : '';
     return `<tr data-sec="${f.sec.join(',')}">
       <td class="c-name">${dot}${esc(f.name)}</td>
@@ -2951,7 +3200,7 @@ function opportunities(){
   FACULTIES.forEach(f=>{
     if(TRACK !== 'all' && !f.sec.includes(TRACK)) return;
     if(f.gov !== null) out.push({fac:f.name, where:'حكومي', src:f.govName, min:f.gov, isGov:true});
-    f.mins.forEach((m,i)=> out.push({fac:f.name, where:TIERNAME[i], src:f.label, min:m, isGov:false}));
+    if(f.mins) f.mins.forEach((m,i)=> out.push({fac:f.name, where:TIERNAME[i], src:f.label, min:m, isGov:false}));
   });
   return out;
 }
@@ -3048,7 +3297,7 @@ function drawRuler(all){
 const FILTERS = {type:'all', tier:'all', fee:'all', fit:'all'};
 
 function facsOfTier(tier, ignoreTrack){
-  return FACULTIES.filter(f=> ignoreTrack || TRACK === 'all' || f.sec.includes(TRACK))
+  return FACULTIES.filter(f=> f.mins && (ignoreTrack || TRACK === 'all' || f.sec.includes(TRACK)))
                   .map(f=> ({name:f.name, label:f.label, sec:f.sec, min:f.mins[tier-1], flag:f.flag}));
 }
 
@@ -3097,9 +3346,10 @@ function uniRow(u){
   });
 
   const note = u.note ? `<div class="uni-note">${esc(u.note)}</div>` : '';
+  const site = uniSiteLink(u.n);
   const foot = feeData
-    ? `<div class="uni-foot">المصدر: ${esc(feeData.src)}${feeData.unit === 'ترم' ? ' · <b>الأرقام بالترم الدراسي مش بالسنة</b>' : ''}</div>`
-    : `<div class="uni-foot">الجامعة دي لسه مأعلنتش مصروفات 2026/2027 من مصدر موثوق — اطلبها كتابةً من عمادة القبول.</div>`;
+    ? `<div class="uni-foot">المصدر: ${esc(feeData.src)}${feeData.unit === 'ترم' ? ' · <b>الأرقام بالترم الدراسي مش بالسنة</b>' : ''}<br>${site}</div>`
+    : `<div class="uni-foot">الجامعة دي لسه مأعلنتش مصروفات 2026/2027 من مصدر موثوق — اطلبها كتابةً من عمادة القبول.<br>${site}</div>`;
   const unitTag = feeData && feeData.unit === 'ترم' ? '<span class="pill p-navy">بالترم</span>' : '';
 
   const fitsMe = SCORE !== null && inTrackFacs.some(f=> SCORE >= f.min) ? '1' : '0';
@@ -3278,7 +3528,7 @@ function feeCard(u){
         <tbody>${rows}</tbody>
       </table>
     </div>
-    <div class="fee-src">المصدر: ${esc(u.src)}</div>
+    <div class="fee-src">المصدر: ${esc(u.src)}<br>${uniSiteLink(u.name)}</div>
   </div>`;
 }
 
@@ -3543,8 +3793,8 @@ function feeFor(uniName, facName){
 }
 
 function buildCmpPickers(){
-  $('cmpFac').innerHTML = FACULTIES.map((f,i)=>
-    `<option value="${i}">${esc(f.name)}</option>`).join('');
+  $('cmpFac').innerHTML = FACULTIES.map((f,i)=> ({f, i})).filter(x=> x.f.mins).map(x=>
+    `<option value="${x.i}">${esc(x.f.name)}</option>`).join('');
   renderCmpUnis();
   $('cmpFac').addEventListener('change', ()=>{ renderCmpUnis(); renderCmp(); });
 }
@@ -3728,7 +3978,7 @@ renderCmp();
 buildShare();
 
 /* ============================================================
-   البوابة: النموذج ← النتيجة ← التفعيل
+   البوابة: النموذج ← النتيجة ← الدفع
    ============================================================ */
 function codeHash(str){
   const t = String(str).trim().toUpperCase().replace(/[\s-]+/g,'');
@@ -3829,16 +4079,16 @@ function previewFor(pct, track){
   const opps = [];
   facs.forEach(f=>{
     if(f.gov !== null && pct >= f.gov) opps.push({fac:f.name, where:'حكومي', min:f.gov, gov:true});
-    f.mins.forEach((m,i)=>{ if(pct >= m) opps.push({fac:f.name, where:TIERNAME[i], min:m, gov:false}); });
+    if(f.mins) f.mins.forEach((m,i)=>{ if(pct >= m) opps.push({fac:f.name, where:TIERNAME[i], min:m, gov:false}); });
   });
   opps.sort((a,b)=> b.min - a.min);
   const kinds = new Set(opps.map(o=> o.fac));
-  const unis  = ALL_UNIS.filter(u=> facs.some(f=> pct >= f.mins[u.tier-1])).length;
+  const unis  = ALL_UNIS.filter(u=> facs.some(f=> f.mins && pct >= f.mins[u.tier-1])).length;
   const gov   = opps.filter(o=> o.gov).length;
   const near  = facs.reduce((n,f)=>{
     let c = 0;
     if(f.gov !== null && pct < f.gov && f.gov - pct <= 3) c++;
-    f.mins.forEach(m=>{ if(pct < m && m - pct <= 3) c++; });
+    if(f.mins) f.mins.forEach(m=>{ if(pct < m && m - pct <= 3) c++; });
     return n + c;
   }, 0);
   return {opps, total:opps.length, kinds:kinds.size, unis, gov, near};
@@ -3951,10 +4201,10 @@ function buildSendButtons(lead, p){
       href="https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1s-.7 1-.9 1.2c-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5s-.7-1.5-.9-2.1c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-1 1-1.2 2.3-.5 3.7.8 1.6 2 3.1 3.6 4.3 2.5 1.9 4.1 1.8 4.9 1.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2m0 18.2c-1.6 0-3.1-.4-4.5-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2"/></svg>
       ابعت على واتساب</a>` : '';
-  const tg = CONFIG.telegram ? `<a class="sendbtn tg" target="_blank" rel="noopener"
-      href="https://t.me/${CONFIG.telegram}">
+  const tg = CONFIG.tgGroup ? `<a class="sendbtn tg" target="_blank" rel="noopener"
+      href="${CONFIG.tgGroup}">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20m4.6 6.9-1.5 7.3c-.1.5-.4.6-.9.4l-2.4-1.8-1.2 1.1c-.1.1-.2.2-.5.2l.2-2.5 4.5-4c.2-.2-.1-.3-.3-.1L8.9 13l-2.4-.7c-.5-.2-.5-.5.1-.8l9.3-3.6c.4-.1.8.1.7.9"/></svg>
-      ابعت على تليجرام</a>` : '';
+      انضم لجروب التليجرام</a>` : '';
   const cp = `<button class="gbtn ghost" type="button" id="copyMsg">نسخ بياناتي كنص</button>`;
   $('sendBtns').innerHTML = wa + tg + cp +
     (REF ? `<p style="font-size:.76rem;color:#8A8168;text-align:center;margin-top:4px">
@@ -4228,6 +4478,73 @@ const SCHOLARSHIPS = [
   req:'القواعد التفصيلية بيحددها المجلس الأعلى للجامعات الأهلية وكل جامعة على حدة — <b>اسأل مكتب القبول في الجامعة اللي هتقدّم فيها عن منح المتفوقين والمنح الاجتماعية قبل ما تدفع أي مصاريف</b>.',
   src:'بيان المجلس الأعلى للجامعات الأهلية (يوليو 2025) · إعلانات الجامعات المجمّعة في «الوطن» (يوليو 2026)', url:'https://www.elwatannews.com/news/details/8329405',
   check(){ return {st:'maybe', why:'دي حق مقرر ومنح معلنة — بس تفاصيلها بتفرق من جامعة لجامعة، فاسأل عنها بنفسك'}; }
+ },
+ {
+  name:'🆕 منح الجامعة المصرية للتعلم الإلكتروني الأهلية (EELU) — تصل لـ100%',
+  cover:'خصم يوصل <b>100%</b> من المصروفات لأوائل الثانوية العامة وطلاب مدارس STEM، للالتحاق ببرامج <b>كلية الحاسبات وتكنولوجيا المعلومات</b> و<b>كلية إدارة الأعمال</b>. وفيه كمان منح تفوق دراسي (20%–30%)، ومنح تفوق رياضي توصل لـ100%، ومنح لذوي الهمم وللطلاب المتعثرين ماليًا.',
+  req:'من أوائل الثانوية العامة على مستوى الجمهورية أو خريج مدارس المتفوقين STEM · باب التقدم اتفتح للعام الجامعي 2026/2027 (إعلان أول أغسطس 2026) · التفاصيل والمستندات على صفحة المنح الرسمية.',
+  src:'إعلان الجامعة — «مصراوي» و«فيتو» أغسطس 2026 · صفحة المنح الرسمية بالجامعة',
+  url:'https://www.eelu.edu.eg/study-system-all/scholarships',
+  check(s){
+    if(s.school === 'stem') return {st:'ok'};
+    if(s.score == null)     return {st:'maybe', why:'اكتب مجموعك — المنحة الكاملة للأوائل، وفيه منح تفوق أقل نسبة'};
+    if(s.score >= 97)       return {st:'ok'};
+    if(s.score >= 90)       return {st:'maybe', why:'المنحة الكاملة للأوائل، لكن الجامعة عندها منح تفوق دراسي 20%–30% — اسأل قبول الجامعة'};
+    return {st:'no', why:'المنح دي موجّهة لأوائل الثانوية وطلاب STEM'};
+  }
+ },
+ {
+  name:'🆕 منح جامعة النيل الأهلية الكاملة للمتفوقين',
+  cover:'منح <b>كاملة تغطي كل سنين الدراسة</b> — 50 منحة لأفضل 500 طالب على مستوى الجمهورية، و20 منحة لأوائل خريجي مدارس STEM، في كليات <b>إدارة الأعمال · الهندسة والعلوم التطبيقية · علوم الحاسب وتكنولوجيا المعلومات · التكنولوجيا الحيوية</b>.',
+  req:'خريج ثانوية عامة مصرية متفوق (علمي أو أدبي) أو خريج مدارس STEM · المنح تنافسية والأعداد محدودة (70 منحة) · التقديم من خلال مكتب القبول بالجامعة.',
+  src:'إعلان الجامعة — «المصري اليوم» 30 يوليو 2026',
+  url:'https://www.almasryalyoum.com/news/details/4326889',
+  check(s){
+    if(s.score == null) return {st:'maybe', why:'اكتب مجموعك عشان نقيسه على مستوى المنحة'};
+    if(s.school === 'stem' && s.score >= 95) return {st:'ok'};
+    if(s.score >= 97) return {st:'ok'};
+    if(s.score >= 93) return {st:'maybe', why:'قريب من نطاق أفضل 500 طالب — يستاهل تقدّم وتجرّب'};
+    return {st:'no', why:'المنحة لأفضل 500 طالب على الجمهورية وأوائل مدارس STEM'};
+  }
+ },
+ {
+  name:'🆕 منح جامعة القاهرة لأوائل الثانوية العامة',
+  cover:'<b>إعفاء كامل من المصروفات</b> للخمسة الأوائل في كل شعبة (علمي علوم · علمي رياضة · أدبي) الملتحقين بكليات الجامعة، وبتستمر طول سنين الدراسة. وفيه منح كمان لخريجي مدارس STEM.',
+  req:'تكون من الخمسة الأوائل في شعبتك على مستوى الجمهورية وملتحق بإحدى كليات جامعة القاهرة · الاستمرار مشروط بتقدير <b>ممتاز</b> في نهاية كل سنة.',
+  src:'قرار مجلس جامعة القاهرة — «بوابة الأهرام» يوليو 2026',
+  url:'https://gate.ahram.org.eg/News/5849762.aspx',
+  check(s){
+    if(s.score == null) return {st:'maybe', why:'اكتب مجموعك — دي منحة أوائل الجمهورية'};
+    if(s.score >= 99) return {st:'ok'};
+    if(s.score >= 97) return {st:'maybe', why:'قريب جدًا من نطاق الأوائل — راجع كشف الأوائل الرسمي'};
+    return {st:'no', why:'مخصصة للخمسة الأوائل في كل شعبة على مستوى الجمهورية'};
+  }
+ },
+ {
+  name:'🆕 منح الجامعة البريطانية في مصر (BUE) 2026/2027',
+  cover:'منح <b>مجانية بالكامل</b> لأوائل الثانوية العامة على مستوى الجمهورية · ومنح جزئية وخصومات <b>تصل لـ80%</b> من المصروفات حسب المجموع · وخصم 15% لطلاب المدارس الشريكة في السنة التأسيسية (باستثناء بعض الكليات).',
+  req:'استيفاء الحد الأدنى اللي يقرّه المجلس الأعلى للجامعات الخاصة + استيفاء متطلبات اللغة الإنجليزية بالجامعة.',
+  src:'إعلان الجامعة — «المصري اليوم» 30 يوليو 2026',
+  url:'https://www.bue.edu.eg/',
+  check(s){
+    if(s.score == null) return {st:'maybe', why:'اكتب مجموعك — الخصم بيتحدد على أساسه'};
+    if(s.score >= 98) return {st:'ok'};
+    if(s.score >= 85) return {st:'maybe', why:'الخصومات الجزئية بتتدرّج حسب المجموع لحد 80% — اسأل قبول الجامعة عن شريحتك'};
+    return {st:'no', why:'المنح والخصومات موجّهة لشرايح المجاميع المرتفعة'};
+  }
+ },
+ {
+  name:'🆕 منح الألمانية بالقاهرة (GUC) والألمانية الدولية (GIU)',
+  cover:'منح كاملة وجزئية، أهمها <b>منحة أوائل المحافظات</b> اللي بتغطي الرسوم الدراسية ورسوم التقديم <b>والسكن</b>، بالإضافة لمنح أوائل الجمهورية ومنح التفوق لطلاب الثانوية العامة والشهادات المعادلة.',
+  req:'تكون من المتفوقين (أوائل محافظتك أو الجمهورية) · اجتياز اختبارات القبول واختبار اللغة الإنجليزية · الحفاظ على المستوى الأكاديمي المطلوب سنويًا للاستمرار في المنحة.',
+  src:'إعلان الجامعتين — «المصري اليوم» 30 يوليو 2026',
+  url:'https://www.guc.edu.eg/',
+  check(s){
+    if(s.score == null) return {st:'maybe', why:'اكتب مجموعك — منحة أوائل المحافظات بتبص على ترتيبك في محافظتك'};
+    if(s.score >= 96) return {st:'ok'};
+    if(s.score >= 88) return {st:'maybe', why:'يستاهل تسأل عن منح التفوق الجزئية بالمجموع ده'};
+    return {st:'no', why:'المنح دي للمتفوقين وأوائل المحافظات والجمهورية'};
+  }
  }
 ];
 
@@ -4310,9 +4627,12 @@ const QZ_FAC = {
  'تكنولوجيا العلوم الصحية':{bio:2,tech:1,care:1}, 'كلية العلوم (الأساسية)':{logic:2,bio:2},
  'الفنون التطبيقية':{art:3,tech:1}, 'الفنون الجميلة (عمارة)':{art:2,logic:2}, 'الفنون الجميلة (فنون)':{art:3,word:1},
  'اللغات والترجمة (الألسن)':{word:3}, 'الإعلام والاتصال':{word:2,art:1,biz:1},
- 'الاقتصاد وإدارة الأعمال':{biz:3,logic:1}, 'الزراعة':{bio:1,field:2}, 'الحقوق والدراسات القانونية':{word:2,logic:1},
+ 'الاقتصاد وإدارة الأعمال (التجارة)':{biz:3,logic:1}, 'الزراعة':{bio:1,field:2}, 'الحقوق والدراسات القانونية':{word:2,logic:1},
  'الآثار':{word:1,art:1,field:2}, 'السياحة والفنادق':{biz:1,word:1,field:1,care:1},
- 'التكنولوجيا الحيوية':{bio:2,logic:1,tech:1}
+ 'التكنولوجيا الحيوية':{bio:2,logic:1,tech:1},
+ 'التربية (عام)':{care:3,word:2}, 'التربية (تعليم ابتدائي)':{care:3,word:1},
+ 'الآداب':{word:3,art:1}, 'دار العلوم':{word:3},
+ 'الخدمة الاجتماعية':{care:3,word:1,field:1}, 'التربية الرياضية (علوم الرياضة)':{field:3,care:1}
 };
 
 let QZ_STEP = 0, QZ_W = {};
@@ -4339,6 +4659,8 @@ function qzAvail(f, sc){
   if(sc == null) return {html:'', reach:true};
   if(f.gov !== null && sc >= f.gov)
     return {html:`<span class="pill p-ok">متاحة حكومي ✓ (حد 2025: ${f.gov}%)</span>`, reach:true};
+  if(!f.mins)
+    return {html:`<span class="pill p-no">حكومي بس · حد 2025 هو ${f.gov}% وأعلى من مجموعك</span>`, reach:false};
   const ti = f.mins.findIndex(m => sc >= m);
   if(ti >= 0)
     return {html:`<span class="pill p-note">متاحة في الخاص والأهلي من ${TIERNAME[ti]} (حد ${f.mins[ti]}%)</span>` +
@@ -4392,6 +4714,7 @@ function initGate(){
   $('gPrice').textContent = CONFIG.price;
   $('gNum').textContent   = CONFIG.payNumber;
   $('gHelp').href         = CONTACT_URL;
+  if($('gGroup')) $('gGroup').href = CONFIG.tgGroup || CONTACT_URL;
 
   /* استرجاع بيانات محفوظة */
   try{
