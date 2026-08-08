@@ -1820,8 +1820,26 @@ th{letter-spacing:.02em}
       <div class="geo-groups" id="wlGeo"></div>
 
       <div id="wlSecsWrap" style="margin-top:16px">
-        <label style="font-size:.86rem;font-weight:700;color:var(--navy)">اختار القطاعات اللي نفسك فيها بالترتيب (اضغط عليهم واحد ورا التاني — رقم 1 = أولويتك الأولى):</label>
+        <label style="font-size:.86rem;font-weight:700;color:var(--navy);display:block;margin-bottom:8px">اختار القطاعات والمعاهد اللي نفسك فيها بالترتيب (اضغط عليهم واحد ورا التاني — رقم 1 = أولويتك الأولى):</label>
         <div class="wl-secs" id="wlSecs"></div>
+
+        <!-- قسم المعاهد القابل للطي Accordion -->
+        <div id="wlInstAccordion" style="margin-top:12px">
+          <button type="button" class="wl-sec" id="wlInstToggleBtn" style="background:#FAF7EF;border-color:var(--navy-3);color:var(--navy);font-weight:700;display:inline-flex;align-items:center;gap:8px;padding:8px 16px;cursor:pointer">
+            <span>🏛️ المعاهد المتاحة لمجموعك</span>
+            <span class="num" id="wlInstCnt" style="font-size:.76rem;background:var(--navy);color:#fff;padding:2px 8px;border-radius:999px">0</span>
+            <span id="wlInstArrow" style="font-size:.78rem;transition:transform .2s">▼</span>
+          </button>
+
+          <div id="wlInstBox" style="display:none;margin-top:10px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:14px;box-shadow:var(--shadow-s)">
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px;flex-wrap:wrap">
+              <input type="search" id="wlInstSearch" placeholder="🔍 دوّر جوه المعاهد المتاحة..." style="flex:1 1 200px;padding:9px 13px;border:1px solid var(--line);border-radius:var(--r-m);font-size:.86rem;outline:none;background:#FAF7EF">
+              <span style="font-size:.78rem;color:var(--muted);font-weight:600" id="wlInstSearchCnt"></span>
+            </div>
+            <div class="wl-secs" id="wlInstSecs" style="max-height:250px;overflow-y:auto;padding-inline-end:4px"></div>
+          </div>
+        </div>
+
         <button class="tool-btn ghost" type="button" id="wlAuto" style="margin-top:12px;padding:9px 16px;font-size:.85rem">تحديد كل المتاح بالترتيب الافتراضي</button>
       </div>
 
@@ -22891,11 +22909,23 @@ function wlRenderGeo(){
     <div class="geo-g geo-c"><h4><span class="geo-tag">ج</span> باقي الجامعات (في الآخر)</h4>
       <p>${C.map(u=>'جامعة '+u).join(' · ')}</p></div>`;
 }
+function isInstitute(name){
+  return typeof name === 'string' && ['معهد', 'المعهد', 'معد', 'أكاديمية', 'اكاديمية', 'تكنولوجي', 'تكنولوجية', 'مركز', 'مجمع', 'ك.ت.'].some(k => name.includes(k));
+}
+
 function wlRenderSecs(){
   const tr = $('wlTrack').value, sc = parseFloat($('wlScore').value);
-  /* شيل من الاختيارات أي قطاع بقى مش متاح بعد تغيير الشعبة أو المجموع */
-  WL_SEL = WL_SEL.filter(n => FACULTIES.some(f =>
-    f.name === n && f.gov !== null && f.sec.includes(tr) && (isNaN(sc) || sc >= f.gov)));
+  /* تصفية WL_SEL من الاختيارات غير المتاحة لمجموع أو شعبة الطالب */
+  WL_SEL = WL_SEL.filter(n => {
+    if(FACULTIES.some(f => f.name === n && f.gov !== null && f.sec.includes(tr) && (isNaN(sc) || sc >= f.gov))) return true;
+    if(typeof GOV_DB !== 'undefined' && Array.isArray(GOV_DB)){
+      const matchingDb = GOV_DB.find(x => x.name === n);
+      if(matchingDb && (isNaN(sc) || sc >= matchingDb.minScorePct) && matchingDb.acceptedTracks && matchingDb.acceptedTracks.includes(tr)) return true;
+    }
+    return false;
+  });
+
+  // 1. عرض قطاعات الكليات
   const box = $('wlSecs'); box.innerHTML = '';
   FACULTIES.filter(f => f.gov !== null && f.sec.includes(tr)).forEach(f=>{
     const reach = isNaN(sc) ? true : sc >= f.gov;
@@ -22914,7 +22944,49 @@ function wlRenderSecs(){
     } else b.title = 'الحد الأدنى الحكومي 2025 للقطاع ده أعلى من مجموعك';
     box.appendChild(b);
   });
+
+  // 2. عرض قسم المعاهد القابل للطي Accordion
+  wlRenderInsts(tr, sc);
 }
+
+function wlRenderInsts(tr, sc){
+  const accordion = $('wlInstAccordion'), cnt = $('wlInstCnt'), instBox = $('wlInstSecs'), searchCnt = $('wlInstSearchCnt');
+  if(!accordion || !instBox || typeof GOV_DB === 'undefined' || !Array.isArray(GOV_DB)) return;
+
+  const eligibleInsts = GOV_DB.filter(x => isInstitute(x.name) && (isNaN(sc) || sc >= x.minScorePct) && x.acceptedTracks && x.acceptedTracks.includes(tr));
+  eligibleInsts.sort((a,b) => b.minScorePct - a.minScorePct);
+
+  if(!eligibleInsts.length){
+    accordion.style.display = 'none';
+    return;
+  }
+  accordion.style.display = 'block';
+  cnt.textContent = eligibleInsts.length;
+
+  const q = ($('wlInstSearch') ? $('wlInstSearch').value : '').trim().toLowerCase();
+  const filtered = q ? eligibleInsts.filter(x => x.name.toLowerCase().includes(q) || (x.university && x.university.toLowerCase().includes(q))) : eligibleInsts;
+  if(searchCnt) searchCnt.textContent = q ? `المعروض: ${filtered.length} من ${eligibleInsts.length}` : '';
+
+  instBox.innerHTML = '';
+  filtered.forEach(x => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    const isSel = WL_SEL.includes(x.name);
+    b.className = 'wl-sec' + (isSel ? ' on' : '');
+    b.dataset.name = x.name;
+    b.style.fontSize = '.81rem';
+    b.style.padding = '6px 12px';
+    b.innerHTML = `<span class="ord">${WL_SEL.indexOf(x.name)+1}</span>${esc(x.name)}` +
+      ` <small style="font-weight:400;opacity:.8">(${x.minScorePct}%)</small>`;
+    b.addEventListener('click', () => {
+      const i = WL_SEL.indexOf(x.name);
+      if(i >= 0) WL_SEL.splice(i,1); else WL_SEL.push(x.name);
+      wlRenderSecs();
+    });
+    instBox.appendChild(b);
+  });
+}
+
 function wlGenerate(){
   const sc = wlScoreVal();
   wlRenderSecs();
@@ -22922,7 +22994,7 @@ function wlGenerate(){
   if(!WL_SEL.length){
     out.classList.add('on');
     list.innerHTML = '';
-    stats.innerHTML = '<span style="color:var(--near);font-weight:600">اختار قطاع واحد على الأقل من فوق الأول 👆</span>';
+    stats.innerHTML = '<span style="color:var(--near);font-weight:600">اختار قطاع أو معهد واحد على الأقل من فوق الأول 👆</span>';
     return;
   }
   const ar = wlArea();
@@ -22931,15 +23003,28 @@ function wlGenerate(){
   const rows = [];
   const seen = new Set();
 
-  // 1. التخصصات المختارة أولاً بالترتيب الجغرافي (أ ← ب ← ج)
+  // 1. المؤسسات/القطاعات المختارة من الطالب بالترتيب الموحد المختار (WL_SEL)
   for(const name of WL_SEL){
-    for(const [g, arr] of [['أ', ar.A], ['ب', ar.B], ['ج', C]]){
-      for(const u of arr){
-        if(rows.length >= 75) break;
-        const key = `${name} — جامعة ${u}`;
-        if(!seen.has(key)){
-          seen.add(key);
-          rows.push({name, u, g});
+    if(rows.length >= 75) break;
+
+    const matchingDb = (typeof GOV_DB !== 'undefined' && Array.isArray(GOV_DB)) ? GOV_DB.filter(x => x.name === name) : [];
+    if(matchingDb.length){
+      const item = matchingDb[0];
+      const uni = item.university && item.university !== 'غير محدد' ? item.university : '';
+      if(!seen.has(name)){
+        seen.add(name);
+        const gTag = uni && ar.A.includes(uni) ? 'أ' : (uni && ar.B.includes(uni) ? 'ب' : 'ج');
+        rows.push({name, u: uni, g: gTag});
+      }
+    } else {
+      for(const [g, arr] of [['أ', ar.A], ['ب', ar.B], ['ج', C]]){
+        for(const u of arr){
+          if(rows.length >= 75) break;
+          const key = `${name} — جامعة ${u}`;
+          if(!seen.has(key)){
+            seen.add(key);
+            rows.push({name, u, g});
+          }
         }
       }
     }
@@ -22970,7 +23055,7 @@ function wlGenerate(){
   const capped = rows.length >= 75;
   stats.innerHTML = `<span>القايمة: <b class="num">${rows.length}</b> رغبة` +
     (capped ? ' — اكتملت القائمة عند الحد الأقصى الرسمي (75 رغبة)' : ' من إجمالي المؤسسات التعليمية المؤهلة لك') + '</span>' +
-    `<span>· قطاعات مختارة: <b class="num">${WL_SEL.length}</b></span>` +
+    `<span>· اختياراتك المحددة: <b class="num">${WL_SEL.length}</b></span>` +
     (sc != null ? `<span>· على مجموع <b class="num">${sc}%</b></span>` : '');
   out.classList.add('on');
 
@@ -22983,6 +23068,7 @@ function wlGenerate(){
     copyText(txt).then(()=>{ b.textContent = 'اتنسخت ✓'; setTimeout(()=> b.textContent = t, 1700); }).catch(()=>{});
   };
 }
+
 function initWishlist(){
   if(!$('wlGov')) return;
   $('wlGov').innerHTML = GEO.map((g,i)=> `<option value="${i}">${g.gov}</option>`).join('');
@@ -23004,6 +23090,23 @@ function initWishlist(){
     WL_SEL = FACULTIES.filter(f => f.gov !== null && f.sec.includes(tr) && (isNaN(sc) || sc >= f.gov)).map(f => f.name);
     wlRenderSecs();
   });
+
+  const toggleBtn = $('wlInstToggleBtn'), instBox = $('wlInstBox'), instArrow = $('wlInstArrow'), searchInp = $('wlInstSearch');
+  if(toggleBtn && instBox){
+    toggleBtn.addEventListener('click', () => {
+      const isClosed = instBox.style.display === 'none' || !instBox.style.display;
+      instBox.style.display = isClosed ? 'block' : 'none';
+      if(instArrow) instArrow.textContent = isClosed ? '▲' : '▼';
+      if(isClosed && searchInp) setTimeout(() => searchInp.focus(), 150);
+    });
+  }
+  if(searchInp){
+    searchInp.addEventListener('input', () => {
+      const tr = $('wlTrack').value, sc = parseFloat($('wlScore').value);
+      wlRenderInsts(tr, sc);
+    });
+  }
+
   $('wlGo').addEventListener('click', wlGenerate);
   syncArea(); wlRenderSecs();
 }
