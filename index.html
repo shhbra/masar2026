@@ -1457,7 +1457,14 @@ th{letter-spacing:.02em}
     <div class="res-body">
       <div class="res-tabs" id="resTabs"></div>
       <div id="oppList"></div>
-      <p class="res-foot">كل «فرصة» هنا = كلية × جهة (حكومي أو فئة من فئات الخاص والأهلي). الأرقام حدود دنيا 2025 — والتنسيق الداخلي الفعلي بيطلع أعلى منها، شوف <a href="#gap" style="color:var(--navy-2);font-weight:600">الفخ الأكبر</a>.</p>
+      <div class="callout" style="border-inline-start-color:var(--navy-3);margin-top:16px;background:#FAF7EF">
+        <b style="font-size:1rem;display:block;margin-bottom:6px;color:var(--navy)">💡 إزاي تفهم الحد الأدنى؟</b>
+        <p style="font-size:.88rem;color:var(--text);margin-bottom:6px"><b>مهم:</b> النسب المعروضة هي الحدود الدنيا التي توقّف عندها تنسيق القبول في العام الموضح. تخطيك لهذا الرقم لا يعني ضمان القبول في نفس الكلية في العام الحالي، لأن الحد الأدنى يتغير حسب أعداد الطلاب وترتيب الرغبات والأماكن المتاحة وقواعد التنسيق.</p>
+        <p style="font-size:.86rem;color:var(--muted);margin-bottom:6px">قد تلاحظ أن كلية في جامعة لها حد أدنى أقل من كلية مشابهة في جامعة أخرى. هذا لا يعني بالضرورة وجود خطأ. الحد الأدنى لكل كلية ينتج عن حركة التنسيق الفعلية في تلك السنة.</p>
+        <p style="font-size:.86rem;color:var(--muted);margin-bottom:6px">الحد الأدنى الظاهر هو حد القبول بالكلية وفق بيانات التنسيق. بعض الكليات قد يكون بها توزيع داخلي على الأقسام أو البرامج وفق لوائح الكلية وشروطها، لذلك القبول بالكلية لا يعني بالضرورة القبول في قسم محدد.</p>
+        <p style="font-size:.8rem;color:var(--navy-3);margin-top:8px;font-weight:700">📌 <b>المصدر:</b> <a href="https://tansik.digital.gov.eg/" target="_blank" rel="noopener" style="color:var(--navy-3);text-decoration:underline">مكتب تنسيق القبول بالجامعات والمعاهد (tansik.digital.gov.eg)</a> — البيانات استرشادية ولا تضمن قبول 2026.</p>
+      </div>
+      <p class="res-foot">كل «فرصة» هنا = كلية × جهة (حكومي أو فئة من فئات الخاص والأهلي). الأرقام حدود دنيا رسمية لعام 2025 كمؤشرات استرشادية — والتنسيق الداخلي الفعلي بين الأقسام بيطلع أعلى منها، شوف <a href="#gap" style="color:var(--navy-2);font-weight:600">الفخ الأكبر</a>.</p>
     </div>
   </section>
 
@@ -2233,7 +2240,7 @@ const CONFIG = {
   /* ---- 2.5) تاريخ آخر تحديث ----
      غيّر السطر ده بس، والتاريخ هيتغيّر في 3 أماكن: الهيرو · صندوق حالة التنسيق · شريط التنبيه.
      اكتبه بالشكل ده بالظبط: يوم شهر سنة */
-  lastUpdate: '5 أغسطس 2026',
+  lastUpdate: '8 أغسطس 2026',
   msgText:    'السلام عليكم، حوّلت مصاريف دليل التنسيق ودي صورة الإيصال 👇',
 
   /* ---- 3) أكواد الدخول (1000 كود) ----
@@ -2453,12 +2460,12 @@ const FACULTIES = [
   /* ── كليات حكومية بس (مفيش ليها نظير في الجامعات الخاصة والأهلية) ──
      الأرقام دي حدود المرحلة الثالثة 2025 للشعبة الأدبية (نظام حديث)
      زي ما أعلنها مكتب التنسيق يوم 9 سبتمبر 2025 — يعني أقل حد اتقبل فعليًا. */
-  {name:'التربية (عام)',             sec:['أدبي'], label:'أدبي', gov:72.65, raw:232.5, govName:'أعلى كليات المرحلة الثالثة أدبي', mins:null, govOnly:true},
-  {name:'التربية (تعليم ابتدائي)',    sec:['أدبي'], label:'أدبي', gov:65.46, raw:209.5, govName:'المرحلة الثالثة 2025 — أدبي', mins:null, govOnly:true},
-  {name:'الآداب',                    sec:['أدبي'], label:'أدبي', gov:63.75, raw:204.0, govName:'انتظام 63.75% · انتساب 63.59%', mins:null, govOnly:true},
-  {name:'دار العلوم',                sec:['أدبي'], label:'أدبي', gov:62.18, raw:199.0, govName:'المرحلة الثالثة 2025 — أدبي', mins:null, govOnly:true},
-  {name:'الخدمة الاجتماعية',          sec:['أدبي'], label:'أدبي', gov:55.90, raw:178.9, govName:'المرحلة الثالثة 2025 — أدبي', mins:null, govOnly:true},
-  {name:'التربية الرياضية (علوم الرياضة)', sec:['أدبي'], label:'أدبي', gov:50.00, raw:160.0, govName:'أقل حد في التنسيق كله · باختبار قدرات', mins:null, govOnly:true}
+  {name:'التربية (عام)',             sec:['أدبي','علوم','رياضة'], label:'كل الشعب', gov:72.65, raw:232.5, govName:'أعلى كليات المرحلة الثالثة أدبي', mins:null, govOnly:true},
+  {name:'التربية (تعليم ابتدائي)',    sec:['أدبي','علوم','رياضة'], label:'كل الشعب', gov:65.46, raw:209.5, govName:'المرحلة الثالثة 2025 — أدبي', mins:null, govOnly:true},
+  {name:'الآداب',                    sec:['أدبي','علوم','رياضة'], label:'كل الشعب', gov:63.75, raw:204.0, govName:'انتظام 63.75% · انتساب 63.59%', mins:null, govOnly:true},
+  {name:'دار العلوم',                sec:['أدبي','علوم','رياضة'], label:'كل الشعب', gov:62.18, raw:199.0, govName:'المرحلة الثالثة 2025 — أدبي', mins:null, govOnly:true},
+  {name:'الخدمة الاجتماعية',          sec:['أدبي','علوم','رياضة'], label:'كل الشعب', gov:55.90, raw:178.9, govName:'المرحلة الثالثة 2025 — أدبي', mins:null, govOnly:true},
+  {name:'التربية الرياضية (علوم الرياضة)', sec:['أدبي','علوم','رياضة'], label:'كل الشعب', gov:50.00, raw:160.0, govName:'أقل حد في التنسيق كله · باختبار قدرات', mins:null, govOnly:true}
 ];
 
 const NOTE_THEORY = 'الجامعة دي ليها استثناء في الكليات النظرية — الحد الأدنى فيها أعلى من باقي الفئة 3 (55% بدل 53% حسب «فيتو»).';
@@ -21854,8 +21861,9 @@ function renderResults(){
   } else {
     $('oppList').innerHTML = `<div class="opp">` + shown.map(o=>{
       const gap = (o.min - SCORE);
-      const badge = RESTAB==='hit' ? '' :
-        `<div class="gapnote num">ناقصك ${gap.toFixed(2)} نقطة</div>`;
+      const badge = RESTAB==='hit'
+        ? `<div class="gapnote num" style="color:var(--ok);font-size:.68rem;margin-top:2px">متاح وفق حد 2025 (استرشادي)</div>`
+        : `<div class="gapnote num" style="color:var(--no);font-size:.68rem;margin-top:2px">ناقصك ${gap.toFixed(2)} نقطة عن حد 2025</div>`;
       return `<div class="opp-item ${cls}">
         <div class="opp-nm">${esc(o.fac)}<small>${esc(o.where)}${o.isGov ? ' · ' + esc(o.src) : ''}</small></div>
         <div class="opp-val"><b class="num">${o.isGov ? o.min.toFixed(2) : o.min}%</b>
@@ -23167,17 +23175,26 @@ function initScholar(){
     const s = { score: isNaN(sc) ? null : sc, school: $('scSchool').value, takaful: $('scTakaful').value };
     const res = SCHOLARSHIPS.map(x => ({x, r: x.check(s)}));
     const ok = res.filter(v => v.r.st === 'ok'), mb = res.filter(v => v.r.st === 'maybe'), no = res.filter(v => v.r.st === 'no');
-    const card = v => `
+    const card = v => {
+      const statusTag = (v.x.status === 'OPEN' || !v.x.status) ? '<span class="pill p-ok">🟢 التقديم مفتوح</span>'
+        : v.x.status === 'ANNOUNCED_NOT_OPEN' ? '<span class="pill p-near">🟡 أعلنت والتقديم قريباً</span>'
+        : v.x.status === 'CLOSED' ? '<span class="pill p-no">🔴 انتهى التقديم</span>'
+        : '<span class="pill p-navy">🔵 الموعد بالجامعة</span>';
+      const applyHref = v.x.applyUrl || v.x.url;
+      return `
       <div class="sch-card ${v.r.st === 'ok' ? 'ok' : v.r.st === 'maybe' ? 'maybe' : ''}">
         <div class="sch-h"><h3>${v.x.name}</h3>
           ${v.r.st === 'ok' ? '<span class="pill p-ok">مؤهل مبدئيًا ✓</span>'
             : v.r.st === 'maybe' ? '<span class="pill p-near">اسأل عنها 👀</span>'
-            : '<span class="pill p-grey">مش منطبقة عليك</span>'}</div>
+            : '<span class="pill p-grey">مش منطبقة عليك</span>'}
+          ${statusTag}</div>
         ${v.r.why ? `<p class="sch-req" style="margin-top:6px"><b>${v.r.st === 'no' ? 'السبب: ' : ''}</b>${v.r.why}</p>` : ''}
         <p class="sch-cov">💰 ${v.x.cover}</p>
         <p class="sch-req">📋 <b>الشروط:</b> ${v.x.req}</p>
-        <p class="sch-src">🔗 <b>المصدر والتقديم:</b> ${v.x.src} — <a href="${v.x.url}" target="_blank" rel="noopener">${v.x.url.replace('https://','')}</a></p>
+        <p class="sch-src">🔗 <b>المصدر:</b> ${v.x.src} — <a href="${v.x.url}" target="_blank" rel="noopener">${v.x.url.replace('https://','').replace('http://','')}</a></p>
+        <div style="margin-top:10px"><a href="${applyHref}" target="_blank" rel="noopener" class="tool-btn" style="padding:7px 16px;font-size:.83rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px">🔗 رابط التقديم / الاستعلام الرسمي المباشر</a></div>
       </div>`;
+    };
     $('scCount').classList.add('on');
     $('scCount').innerHTML = ok.length
       ? `🎉 أنت مؤهل مبدئيًا تقدّم على <b class="num">${ok.length}</b> ${ok.length === 1 ? 'منحة' : 'منح'}` +
