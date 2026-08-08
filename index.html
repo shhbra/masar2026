@@ -22927,29 +22927,57 @@ function wlGenerate(){
   }
   const ar = wlArea();
   const C = GOVUNIS.filter(u => !ar.A.includes(u) && !ar.B.includes(u));
+  const tr = $('wlTrack').value;
   const rows = [];
-  outer:
+  const seen = new Set();
+
+  // 1. التخصصات المختارة أولاً بالترتيب الجغرافي (أ ← ب ← ج)
   for(const name of WL_SEL){
     for(const [g, arr] of [['أ', ar.A], ['ب', ar.B], ['ج', C]]){
       for(const u of arr){
-        if(rows.length >= 75) break outer;
-        rows.push({name, u, g});
+        if(rows.length >= 75) break;
+        const key = `${name} — جامعة ${u}`;
+        if(!seen.has(key)){
+          seen.add(key);
+          rows.push({name, u, g});
+        }
       }
     }
   }
+
+  // 2. استكمال باقي الخانات الـ75 من باقي الكليات والمعاهد الحكومية والعليا المؤهلة بـ GOV_DB
+  if(rows.length < 75 && typeof GOV_DB !== 'undefined' && Array.isArray(GOV_DB)){
+    const eligibleDb = GOV_DB.filter(x => (sc === null || sc >= x.minScorePct) && x.acceptedTracks && x.acceptedTracks.includes(tr));
+    eligibleDb.sort((a,b) => b.minScorePct - a.minScorePct);
+
+    for(const item of eligibleDb){
+      if(rows.length >= 75) break;
+      const nm = item.name;
+      const uni = item.university && item.university !== 'غير محدد' ? item.university : '';
+      const key = nm;
+      if(!seen.has(key)){
+        seen.add(key);
+        const gTag = uni && ar.A.includes(uni) ? 'أ' : (uni && ar.B.includes(uni) ? 'ب' : 'ج');
+        rows.push({name: nm, u: uni, g: gTag});
+      }
+    }
+  }
+
   list.innerHTML = rows.map(r =>
-    `<div class="wl-row"><span>${esc(r.name)} — <b>جامعة ${esc(r.u)}</b></span>` +
+    `<div class="wl-row"><span>${esc(r.name)}${r.u ? ' — <b>جامعة ' + esc(r.u) + '</b>' : ''}</span>` +
     `<span class="g ${r.g === 'أ' ? 'a' : r.g === 'ب' ? 'b' : 'c'}">${r.g}</span></div>`).join('');
+
   const capped = rows.length >= 75;
   stats.innerHTML = `<span>القايمة: <b class="num">${rows.length}</b> رغبة` +
-    (capped ? ' — وقفنا عند الحد الأقصى الرسمي (75 رغبة)' : ' من أصل 75 مسموحين') + '</span>' +
+    (capped ? ' — اكتملت القائمة عند الحد الأقصى الرسمي (75 رغبة)' : ' من إجمالي المؤسسات التعليمية المؤهلة لك') + '</span>' +
     `<span>· قطاعات مختارة: <b class="num">${WL_SEL.length}</b></span>` +
     (sc != null ? `<span>· على مجموع <b class="num">${sc}%</b></span>` : '');
   out.classList.add('on');
+
   $('wlCopy').onclick = ()=>{
     const txt = 'قايمة رغباتي — مسار MASAR (مرتّبة حسب التوزيع الجغرافي الرسمي أ ← ب ← ج)\n' +
       `المحافظة: ${GEO[+$('wlGov').value].gov} · ${ar.a}\n` + '─'.repeat(30) + '\n' +
-      rows.map((r,i)=> `${i+1}. ${r.name} — جامعة ${r.u} (مجموعة ${r.g})`).join('\n') +
+      rows.map((r,i)=> `${i+1}. ${r.name}${r.u ? ' — جامعة ' + r.u : ''} (مجموعة ${r.g})`).join('\n') +
       '\n' + '─'.repeat(30) + '\nملحوظة: لو كلية مش ظاهرة في جامعة معينة على موقع التنسيق، يبقى مش متاحة فيها — كمّل على اللي بعدها بنفس الترتيب.';
     const b = $('wlCopy'), t = b.textContent;
     copyText(txt).then(()=>{ b.textContent = 'اتنسخت ✓'; setTimeout(()=> b.textContent = t, 1700); }).catch(()=>{});
