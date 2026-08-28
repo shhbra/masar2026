@@ -1748,8 +1748,9 @@ th{letter-spacing:.02em}
   <section class="section" id="wishlist">
     <div class="sec-head">
       <span class="sec-kicker">أخطر خطوة في التنسيق الحكومي</span>
-      <h2>🎯 مولّد الرغبات الذكي — رتّب الـ75 رغبة صح</h2>
-      <p>موقع التنسيق بيلزمك تختار كليات <strong>المجموعة (أ) الأولانية، وبعدين (ب)، وبعدين (ج)</strong> — وترتيب غلط ممكن يوديك كلية أبعد أو يضيّع عليك فرصة أقرب. اختار محافظتك وقطاعاتك المفضلة، وهنطلعلك قايمة مرتّبة جاهزة تمشي عليها وإنت بتسجّل.</p>
+      <h2>🎯 مولد رغبات المرحلة الثالثة</h2>
+      <p><b>المرحلة الثالثة — الحد الأدنى 160 درجة</b> (نظام حديث من 320 درجة). موقع التنسيق بيلزمك تختار كليات <strong>المجموعة (أ) الأولانية، وبعدين (ب)، وبعدين (ج)</strong> — وترتيب غلط ممكن يوديك كلية أبعد أو يضيّع عليك فرصة أقرب. اختار محافظتك واكتب مجموعك، وهنطلعلك قايمة مرتّبة من الكليات والمعاهد المؤهلة ليك فعليًا.</p>
+      <p style="font-size:.84rem;color:var(--muted);margin-top:8px;line-height:1.7">مولد الرغبات يعمل حاليًا على المرحلة الثالثة ويعتمد على الشعبة والمجموع وبيانات القبول المتاحة لكل كلية ومعهد.<br><b>نطاق المجموع المدعوم:</b> أدبي 160 إلى 205 · علمي علوم 160 إلى 220 · علمي رياضة 160 إلى 220.<br>المرجع المستخدم في الأهلية: <b>بيانات مرجعية 2025</b> (نظام حديث من 320) — مش حدود دنيا رسمية للمرحلة الثالثة 2026.</p>
     </div>
 
     <div class="wl-links">
@@ -1759,6 +1760,21 @@ th{letter-spacing:.02em}
         🎬 فيديو: خطوات التسجيل بالصور</a>
       <a class="alt" href="https://gate.ahram.org.eg/News/5882826.aspx" target="_blank" rel="noopener">
         📄 دليل الخطوات — بوابة الأهرام</a>
+    </div>
+
+    <!-- 📋 الحدود الرسمية للمرحلة الثالثة 2025 — مكتب تنسيق القبول بالجامعات -->
+    <div class="tool-note" id="wlOfficialRef" style="margin:0 0 14px;border-inline-start:4px solid var(--brand);background:#FAF7EF">
+      <b style="font-size:.88rem;color:var(--navy);display:block;margin-bottom:8px">📋 راجع الحدود الرسمية للمرحلة الثالثة 2025</b>
+      <div class="wl-links" style="margin-bottom:8px">
+        <a class="alt" id="wlOfficialLitLink" href="https://tansik.digital.gov.eg/application/Certificates/Thanwy/Limits/LimitA2025.htm" target="_blank" rel="noopener noreferrer">
+          📋 الحدود الرسمية 2025 — المجموعة الأدبية (نظام حديث)</a>
+        <a class="alt" id="wlOfficialSciLink" href="https://tansik.digital.gov.eg/application/Certificates/Thanwy/Limits/LimitE2025.htm" target="_blank" rel="noopener noreferrer">
+          📋 الحدود الرسمية 2025 — المجموعة العلمية (نظام حديث)</a>
+      </div>
+      <div style="font-size:.77rem;color:var(--muted);line-height:1.7">
+        المصدر الرسمي: <b>مكتب تنسيق القبول بالجامعات — tansik.digital.gov.eg</b>. الصفحتين دول هما «بيان بالحد الأدنى للقبول بكليات ومعاهد المجموعة الأدبية / المجموعة العلمية نظام حديث لعام 2025» كما نشرها المكتب (صفحة المجموعة العلمية بتشمل علمي علوم وعلمي رياضة مع بعض).
+        راجع الصفحة الرسمية بنفسك قبل أي قرار — الأرقام اللي جوه المولد <b>بيانات مرجعية 2025</b> للاسترشاد، ومش بديل عن الإعلان الرسمي.
+      </div>
     </div>
 
     <details class="fold fold-steps" style="margin-top:0;margin-bottom:16px">
@@ -1812,21 +1828,23 @@ th{letter-spacing:.02em}
           </select>
         </div>
         <div class="tool-field">
-          <label for="wlScore">مجموعك (%)</label>
-          <input type="number" id="wlScore" inputmode="decimal" min="50" max="100" step="0.01" placeholder="مثال: 85.5">
+          <label for="wlScore">مجموعك (درجة من 320)</label>
+          <input type="number" id="wlScore" inputmode="decimal" min="160" max="220" step="0.5" placeholder="مثال: 190">
+          <div id="wlRangeHint" style="font-size:.76rem;color:var(--muted);margin-top:5px;font-weight:600"></div>
         </div>
       </div>
 
       <div class="geo-groups" id="wlGeo"></div>
 
-            <!-- صندوق الإرشادات الرسمية للتسجيل الآمن للمرحلة الثانية -->
+            <!-- إرشادات المرحلة الثالثة قبل ترتيب الرغبات -->
       <div class="tool-note" style="margin-top:16px;margin-bottom:14px;border-inline-start:4px solid var(--navy);background:#FAF7EF">
-        <b style="font-size:.9rem;color:var(--navy);display:block;margin-bottom:6px">📌 تنبيهات هامة لطلاب المرحلة الثانية قبل اختيار ترتيب الرغبات:</b>
-        • <b>الأماكن والقطاعات المتاحة</b> هنا هي كليات ومعاهد لها أماكن شاغرة رسمية للمرحلة الثانية وفق بيانات مسار.<br>
+        <b style="font-size:.9rem;color:var(--navy);display:block;margin-bottom:6px">📌 تنبيهات هامة لطلاب المرحلة الثالثة قبل اختيار ترتيب الرغبات:</b>
+        • <b>اجتياز الحد الأدنى للمرحلة الثالثة (160 درجة) لا يعني أن جميع الكليات متاحة</b> — كل كلية ومعهد له حد أدنى خاص به وبيتفحص لوحده.<br>
+        • <b>يمكنك اختيار كليات أو معاهد معينة بالاسم</b>، وسيتم الحفاظ على ترتيبها ضمن الرغبات ما دامت مستوفية لشروط الأهلية.<br>
         • <b>اختيارك للكلية أو القطاع</b> يضعها ضمن ترتيب أولوياتك الشخصية، <b>وليس ضمانًا نهائيًا للقبول بها</b>.<br>
         • <b>الترشيح النهائي</b> يحدده موقع التنسيق الإلكتروني الرسمي وفق ترتيب رغباتك وقواعد التنسيق الجغرافي والأعداد المقررة.<br>
-        • رتّب رغباتك حسب تفضيلك الحقيقي، وتأكد أن <b>الرغبة الأعلى في ترتيبك لها أولوية على الرغبات التالية</b> عند دراسة الترشيح.<br>
-        • <b>العدد 75 هو الحد الأقصى المسموح به للتسجيل</b>، وليس عددًا إجباريًا — لا تضف كلية لا ترغب فيها فقط لملء العدد.
+        • <b>العدد 75 هو الحد الأقصى المسموح به للتسجيل</b>، وليس عددًا إجباريًا — لا تضف كلية لا ترغب فيها فقط لملء العدد.<br>
+        • الأهلية هنا محسوبة على <b>بيانات مرجعية 2025</b> (نظام حديث من 320 درجة) كما هي بدون أي تحويل، وليست حدودًا دنيا رسمية معلنة للمرحلة الثالثة 2026.
       </div>
 
       <div id="wlSecsWrap" style="margin-top:16px">
@@ -1837,7 +1855,36 @@ th{letter-spacing:.02em}
           <b>محتار تبدأ منين؟ 🤔</b><br>
           القطاعات اللي عليها علامة (🔥 أعلى فرصة لمجموعك) هي أفضل كليات مناسبة لمجموعك. تقدر تختارهم، أو تضغط على زرار <b>"✨ رشّحلي ورتّبلي أفضل الرغبات جغرافياً"</b> تحت، وإحنا هنرتبلك قايمة مثالية حسب توزيعك الجغرافي.
         </div>
+        <!-- حالة المجموع بالنسبة للمرحلة الثالثة -->
+        <div id="wlScoreNotice" style="display:none;margin-bottom:12px;padding:10px 13px;border-radius:var(--r-m);border:1px solid var(--line);border-inline-start:4px solid var(--ok);background:#F2FBF4;font-size:.84rem;line-height:1.7;color:var(--navy)"></div>
+
         <div class="wl-secs" id="wlSecs"></div>
+
+        <!-- 🔎 اختيار كليات ومعاهد معينة بالاسم — اللوحة بتفتح تحت الزرار على طول -->
+        <div id="wlNamePickWrap" style="margin-top:14px">
+          <button type="button" class="wl-sec" id="wlNamePickBtn" aria-expanded="false" aria-controls="wlNamePickPanel"
+            style="background:#FAF7EF;border-color:var(--navy-3);color:var(--navy);font-weight:700;display:inline-flex;align-items:center;gap:8px;padding:9px 16px;cursor:pointer;max-width:100%;flex-wrap:wrap">
+            <span>🔎 اختار كليات معينة بالاسم</span>
+            <span class="num" id="wlNamePickCntBadge" style="font-size:.76rem;background:var(--navy);color:#fff;padding:2px 8px;border-radius:999px">0</span>
+            <span id="wlNamePickArrow" style="font-size:.78rem">▼</span>
+          </button>
+
+          <div id="wlNamePickPanel" role="region" aria-labelledby="wlNamePickBtn"
+            style="display:none;margin-top:8px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:14px;box-shadow:var(--shadow-s);max-width:100%">
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap">
+              <input type="search" id="wlNamePickSearch" placeholder="ابحث باسم الكلية أو المعهد..."
+                style="flex:1 1 180px;min-width:0;padding:9px 13px;border:1px solid var(--line);border-radius:var(--r-m);font-size:.86rem;outline:none;background:#FAF7EF">
+              <button type="button" id="wlNamePickClear"
+                style="padding:9px 13px;border:1px solid var(--line);border-radius:var(--r-m);background:#fff;color:var(--navy);font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap">🗑️ مسح الاختيارات</button>
+            </div>
+            <div id="wlNamePickCount" style="font-size:.85rem;font-weight:800;color:var(--brand-dk);margin-bottom:4px">الكليات المختارة بالاسم: <b class="num">0</b></div>
+            <div id="wlNamePickHint" style="font-size:.77rem;color:var(--muted);font-weight:600;margin-bottom:8px"></div>
+            <div class="wl-secs" id="wlNamePickList" style="max-height:280px;overflow-y:auto;overflow-x:hidden;padding-inline-end:4px"></div>
+            <div style="font-size:.74rem;color:var(--muted);margin-top:8px;background:rgba(0,0,0,.03);padding:6px 9px;border-radius:var(--r-s);line-height:1.6">
+              ℹ️ القايمة دي هي نفس الكليات والمعاهد المؤهلة ليك في المرحلة الثالثة — البحث بيفلتر بس ومش بيفتح أي حاجة مش مؤهلة. اختياراتك بالاسم بتاخد أولوية في أول قايمة الرغبات بنفس ترتيب اختيارك.
+            </div>
+          </div>
+        </div>
 
         <!-- قسم الكليات الجامعية المتاحة القابل للطي Accordion -->
         <div id="wlFacultyAccordion" style="margin-top:12px">
@@ -1924,7 +1971,7 @@ th{letter-spacing:.02em}
             <!-- مراجعة السلامة والتنسيق قبل استخراج القائمة الرسمية -->
       <div id="wlPreSubmitChecklist" style="background:#FAF7EF;border:1px solid var(--navy-3);border-radius:var(--r-m);padding:12px 14px;margin-top:14px;margin-bottom:10px;font-size:.83rem;line-height:1.6;color:var(--navy)">
         <b style="font-size:.88rem;color:var(--navy);display:block;margin-bottom:4px">📋 مراجعة التنسيق الآمن قبل استخراج القائمة الرسمية:</b>
-        ✓ جميع الرغبات المحددة متاحة رسمياً للتسجيل في المرحلة الثانية.<br>
+        ✓ جميع الرغبات المحددة مؤهلة لمجموعك وشعبتك في المرحلة الثالثة حسب بيانات مرجعية 2025.<br>
         ✓ لا يوجد تكرار للكليات أو المعاهد المضافة.<br>
         ✓ جميع اختياراتك اليدوية محفوظة في أعلى القائمة بحسب ترتيبك.<br>
         ✓ القائمة تلتزم بقواعد التنسيق الجغرافي الرسمي (أ ← ب ← ج).<br>
@@ -2379,7 +2426,7 @@ const CONFIG = {
   /* ---- 2.5) تاريخ آخر تحديث ----
      غيّر السطر ده بس، والتاريخ هيتغيّر في 3 أماكن: الهيرو · صندوق حالة التنسيق · شريط التنبيه.
      اكتبه بالشكل ده بالظبط: يوم شهر سنة */
-  lastUpdate: '20 أغسطس 2026',
+  lastUpdate: '28 أغسطس 2026',
   msgText:    'السلام عليكم، حوّلت مصاريف دليل التنسيق ودي صورة الإيصال 👇',
 
   /* ---- 3) أكواد الدخول (1000 كود) ----
@@ -23228,14 +23275,120 @@ function isPhase2Eligible(item, tr, sc){
   return true;
 }
 
+/* ============================================================
+   🎯 المرحلة الثالثة — نواة الأهلية الموحّدة (بيانات مرجعية 2025)
+   نظام حديث من 320 درجة · الحد الأدنى العام 160 درجة
+   كل واجهات مولد الرغبات (القطاعات · الكليات · المعاهد ·
+   الاختيار بالاسم · البحث · الترشيح التلقائي · التوليد النهائي)
+   بتستخدم isPhase3Eligible() ومفيش أي منطق أهلية تاني.
+   ============================================================ */
+const PHASE3_MIN_SCORE   = 160;
+const PHASE3_MAX_BY_TRACK = { 'أدبي': 205, 'علوم': 220, 'رياضة': 220 };
+const PHASE3_DATA_LABEL  = 'بيانات مرجعية 2025';
+
+/* مجمّع مرجعي معزول — سجلات 2025 فقط من HISTORICAL_GOV_DB_2025 كما هي بدون أي تحويل */
+const PHASE3_REF_2025 = (typeof HISTORICAL_GOV_DB_2025 !== 'undefined' && Array.isArray(HISTORICAL_GOV_DB_2025))
+  ? HISTORICAL_GOV_DB_2025.filter(x =>
+      x && x.year === 2025 &&
+      typeof x.minScoreRaw === 'number' && isFinite(x.minScoreRaw) &&
+      typeof x.acceptanceType === 'string' && x.acceptanceType.indexOf('حكومي') === 0 &&
+      Array.isArray(x.acceptedTracks) && x.acceptedTracks.length > 0)
+  : [];
+
+const PHASE3_REF_BY_TRACK = { 'أدبي': [], 'علوم': [], 'رياضة': [] };
+PHASE3_REF_2025.forEach(x => {
+  x.acceptedTracks.forEach(t => { if (PHASE3_REF_BY_TRACK[t]) PHASE3_REF_BY_TRACK[t].push(x); });
+});
+
+function getPhase3DB(track){ return PHASE3_REF_BY_TRACK[track] || []; }
+function phase3MaxScore(track){
+  return (PHASE3_MAX_BY_TRACK[track] != null) ? PHASE3_MAX_BY_TRACK[track] : 220;
+}
+function phase3RangeText(track){
+  return 'نطاق المجموع المدعوم: ' + PHASE3_MIN_SCORE + ' إلى ' + phase3MaxScore(track);
+}
+/* حالة المجموع: empty / below / above / ok — من غير أي تعديل أو تقريب للمجموع */
+function phase3ScoreState(track, sc){
+  if (sc === null || sc === undefined || isNaN(sc)) return 'empty';
+  if (sc < PHASE3_MIN_SCORE) return 'below';
+  if (sc > phase3MaxScore(track)) return 'above';
+  return 'ok';
+}
+
+/* ✅ دالة الأهلية الوحيدة المعتمدة — كل مؤسسة بتتفحص لوحدها */
+function isPhase3Eligible(item, tr, sc){
+  if (!item) return false;
+  /* موجودة فعلاً في البيانات المرجعية 2025 — غير كده تعتبر DATA NOT VERIFIED */
+  if (item.year !== 2025) return false;
+  if (typeof item.minScoreRaw !== 'number' || !isFinite(item.minScoreRaw)) return false;
+  /* هوية القبول ونوع المؤسسة (حكومي عام / قدرات / انتساب) */
+  if (typeof item.acceptanceType !== 'string' || item.acceptanceType.indexOf('حكومي') !== 0) return false;
+  /* الشعبة — مفيش تسريب بين الشعب */
+  if (!Array.isArray(item.acceptedTracks) || item.acceptedTracks.indexOf(tr) < 0) return false;
+  /* المجموع جوه نطاق المرحلة الثالثة للشعبة دي */
+  if (phase3ScoreState(tr, sc) !== 'ok') return false;
+  /* الحد الأدنى الخاص بالمؤسسة نفسها — مفيش فتح جماعي بمجرد تخطي 160 */
+  if (sc < item.minScoreRaw) return false;
+  return true;
+}
+
+/* المجمّع المؤهل الحالي — المصدر الوحيد لكل الواجهات */
+function phase3EligibleList(tr, sc){
+  if (phase3ScoreState(tr, sc) !== 'ok') return [];
+  return getPhase3DB(tr).filter(x => isPhase3Eligible(x, tr, sc));
+}
+
+/* تطبيع أسماء المؤسسات لمنع التكرار (كانت مستدعاة بدون تعريف = ReferenceError) */
+function normInstName(s){
+  let t = String(s === null || s === undefined ? '' : s);
+  t = t.replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه');
+  t = t.split(/[ًٌٍَُِّْـ]/).join('');
+  t = t.split(' ').filter(Boolean).join(' ');
+  return t.trim().toLowerCase();
+}
+
+/* ---- حالة الاختيار اليدوي بالاسم (مصدر واحد للترتيب) ---- */
+let MANUAL_PICKS = [];
+
+function syncManualArrays(){
+  SELECTED_FACULTIES  = MANUAL_PICKS.filter(n => !isInstitute(n));
+  SELECTED_INSTITUTES = MANUAL_PICKS.filter(n =>  isInstitute(n));
+}
+function manualToggle(name){
+  const i = MANUAL_PICKS.indexOf(name);
+  if (i >= 0) MANUAL_PICKS.splice(i, 1); else MANUAL_PICKS.push(name);
+  syncManualArrays(); syncWlSel();
+}
+function manualClear(){
+  MANUAL_PICKS = []; syncManualArrays(); syncWlSel();
+}
+/* إعادة التحقق بعد أي تغيير في المجموع أو الشعبة — الاختيارات الباطلة بتتشال */
+function manualRevalidate(tr, sc){
+  const db = getPhase3DB(tr);
+  MANUAL_PICKS = MANUAL_PICKS.filter(n => {
+    const rec = db.find(x => x.name === n);
+    return !!rec && isPhase3Eligible(rec, tr, sc);
+  });
+  syncManualArrays(); syncWlSel();
+}
+
+/* رسالة واضحة للمجموع خارج النطاق المدعوم — من غير قص أو تحويل */
+function wlOutOfRangeMsg(tr, sc, state){
+  const max = phase3MaxScore(tr);
+  const trTxt = (tr === 'أدبي') ? 'الأدبي' : (tr === 'علوم' ? 'علمي علوم' : 'علمي رياضة');
+  if (state === 'empty') return 'اكتب مجموعك بالدرجات (من 320) الأول. ' + phase3RangeText(tr) + '.';
+  if (state === 'below') return 'مجموعك ' + sc + ' درجة أقل من الحد الأدنى للمرحلة الثالثة (' + PHASE3_MIN_SCORE + ' درجة) — مفيش رغبات متاحة في المرحلة الثالثة على المجموع ده.';
+  return 'مجموعك ' + sc + ' درجة أعلى من النطاق اللي المولد متظبط عليه لشعبة ' + trTxt + ' في المرحلة الثالثة (' + PHASE3_MIN_SCORE + ' إلى ' + max + '). المولد الحالي متظبط على النطاق ده بس، ومش هيشتغل بره النطاق.';
+}
+
 
 function wlArea(){
   const g = GEO[+$('wlGov').value];
   return g.areas[+($('wlArea').value || 0)] || g.areas[0];
 }
 function wlScoreVal(){
-  let v = parseFloat($('wlScore').value);
-  if(isNaN(v) && SCORE != null){ v = SCORE; $('wlScore').value = SCORE; }
+  /* درجة من 320 — من غير أي تحويل أو قص أو استيراد نسبة مئوية */
+  const v = parseFloat($('wlScore').value);
   return isNaN(v) ? null : v;
 }
 function wlRenderGeo(){
@@ -23271,256 +23424,307 @@ function getSectorKeywords(fName) {
   return [clean];
 }
 
+function wlRenderRangeHint(){
+  const tr = $('wlTrack').value;
+  const el = $('wlRangeHint');
+  const inp = $('wlScore');
+  if (inp){
+    inp.min = String(PHASE3_MIN_SCORE);
+    inp.max = String(phase3MaxScore(tr));
+  }
+  if (el) el.textContent = phase3RangeText(tr) + ' درجة (نظام حديث من 320)';
+}
+
+function wlRenderScoreNotice(tr, sc, state, poolCount){
+  const el = $('wlScoreNotice');
+  if (!el) return;
+  el.style.display = 'block';
+  if (state === 'ok'){
+    el.style.background = '#F2FBF4';
+    el.style.borderInlineStartColor = 'var(--ok)';
+    el.innerHTML = '✅ <b>المرحلة الثالثة</b> — على مجموع <b class="num">' + sc + '</b> درجة في شعبة ' +
+      esc(tr === 'أدبي' ? 'أدبي' : 'علمي ' + tr) + ' فيه <b class="num">' + poolCount +
+      '</b> كلية ومعهد مؤهلين ليك فعليًا حسب <b>' + PHASE3_DATA_LABEL + '</b>.' +
+      '<br><span style="font-size:.79rem;color:var(--muted)">اجتياز الحد الأدنى للمرحلة الثالثة لا يعني أن جميع الكليات متاحة — كل كلية أو معهد بيتفحص بالحد الأدنى الخاص بيه لوحده.</span>';
+    return;
+  }
+  el.style.background = '#FDF3F2';
+  el.style.borderInlineStartColor = 'var(--no)';
+  el.innerHTML = '⚠️ ' + esc(wlOutOfRangeMsg(tr, sc, state));
+}
+
 function wlRenderSecs(){
-  const tr = $('wlTrack').value, sc = parseFloat($('wlScore').value);
-  
-  SECTOR_PRIORITIES = SECTOR_PRIORITIES.filter(n => FACULTIES.some(f => f.name === n && f.gov !== null && f.sec.includes(tr)));
-  SELECTED_FACULTIES = SELECTED_FACULTIES.filter(n => {
-    if(false) return false;
-    const db = getCurrentGovDB(typeof tr !== "undefined" ? tr : TRACK).find(x => x.name === n);
-    return db && !isInstitute(db.name) && isPhase2Eligible(db, tr, sc);
+  const tr = $('wlTrack').value;
+  const sc = wlScoreVal();
+  const state = phase3ScoreState(tr, sc);
+
+  wlRenderRangeHint();
+
+  /* إعادة التحقق من كل الاختيارات اليدوية بعد أي تغيير في المجموع أو الشعبة */
+  manualRevalidate(tr, sc);
+
+  /* المجمّع المؤهل الحالي — نفس الدالة اللي بيستخدمها التوليد والبحث والاختيار بالاسم */
+  const pool = phase3EligibleList(tr, sc);
+
+  /* القطاعات: القطاع بيفتح فقط لو فيه مؤسسة واحدة على الأقل مؤهلة فعليًا جواه */
+  const sectors = [];
+  FACULTIES.filter(f => f.gov !== null && f.sec.includes(tr)).forEach(f => {
+    const kws = getSectorKeywords(f.name);
+    const items = pool.filter(x => kws.some(kw => x.name.includes(kw)));
+    sectors.push({
+      name: f.name,
+      count: items.length,
+      maxCutoff: items.length ? Math.max.apply(null, items.map(x => x.minScoreRaw)) : 0
+    });
   });
-  SELECTED_INSTITUTES = SELECTED_INSTITUTES.filter(n => {
-    if(false) return false;
-    const db = getCurrentGovDB(typeof tr !== "undefined" ? tr : TRACK).find(x => x.name === n);
-    return db && isInstitute(db.name) && isPhase2Eligible(db, tr, sc);
-  });
+
+  SECTOR_PRIORITIES = SECTOR_PRIORITIES.filter(n => sectors.some(s => s.name === n && s.count > 0));
   syncWlSel();
 
-  // 1. حساب أفضل 3 قطاعات متاحة من حيث أعلى حد أدنى كلي (🔥 أعلى فرصة لمجموعك)
-  const reachableList = [];
-  FACULTIES.filter(f => f.gov !== null && f.sec.includes(tr)).forEach(f => {
-    let reach = isNaN(sc) ? true : sc >= f.gov;
-    let maxCutoff = 0;
-    if(!reach && true){
-      const kws = getSectorKeywords(f.name);
-      const match = getCurrentGovDB(typeof tr !== "undefined" ? tr : TRACK).some(x => isPhase2Eligible(x, tr, sc) && kws.some(kw => x.name.includes(kw)));
-      if(match) reach = true;
-    }
-    if(reach && true){
-      const kws = getSectorKeywords(f.name);
-      const matchingDb = getCurrentGovDB(typeof tr !== "undefined" ? tr : TRACK).filter(x => isPhase2Eligible(x, tr, sc) && kws.some(kw => x.name.includes(kw)));
-      if(matchingDb.length > 0){
-        maxCutoff = Math.max(...matchingDb.map(x => x.minScorePct || 0));
+  const topSectorsSet = new Set(
+    sectors.filter(s => s.count > 0)
+           .slice()
+           .sort((a, b) => b.maxCutoff - a.maxCutoff)
+           .slice(0, 3)
+           .map(s => s.name)
+  );
+
+  const box = $('wlSecs');
+  if (box){
+    box.innerHTML = '';
+    sectors.forEach(s => {
+      const reach  = s.count > 0;
+      const isSel  = SECTOR_PRIORITIES.indexOf(s.name) >= 0;
+      const selRank = isSel ? (SECTOR_PRIORITIES.indexOf(s.name) + 1) : 0;
+
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'wl-sec' + (reach ? '' : ' dis') + (isSel ? ' on' : '');
+      b.dataset.name = s.name;
+
+      const topBadge = (reach && topSectorsSet.has(s.name))
+        ? '<span style="display:inline-block;background:#FFE4E1;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:0.65rem;font-weight:800;border:1px solid #E6B0AA;margin-bottom:4px">🔥 أعلى فرصة لمجموعك</span><br>'
+        : '';
+
+      const shortcutHtml = reach
+        ? '<br><span class="sec-cherry-pick" data-sec="' + esc(s.name) + '" style="display:inline-block;margin-top:6px;font-size:0.73rem;color:var(--brand-dk);background:rgba(179,74,56,0.1);padding:3px 8px;border-radius:4px;font-weight:700;cursor:pointer">🔎 اختار كليات معينة بالاسم</span>'
+        : '';
+
+      b.innerHTML = topBadge +
+        (isSel ? '<span class="ord" style="font-size:.72rem;margin-inline-end:4px" title="ترتيب الأولوية">أولوية ' + selRank + '</span>' : '') +
+        esc(s.name) +
+        (reach
+          ? ' <small style="font-weight:400;opacity:.85">(' + s.count + ' متاحة)</small>'
+          : ' <small style="font-weight:400">(مش متاح لمجموعك في المرحلة الثالثة)</small>') +
+        shortcutHtml;
+
+      if (reach){
+        b.addEventListener('click', (e) => {
+          const cpEl = e.target.closest('.sec-cherry-pick');
+          if (cpEl){
+            e.stopPropagation();
+            e.preventDefault();
+            wlOpenNamePicker(getSectorKeywords(s.name)[0] || s.name);
+            return;
+          }
+          const i = SECTOR_PRIORITIES.indexOf(s.name);
+          if (i >= 0) SECTOR_PRIORITIES.splice(i, 1); else SECTOR_PRIORITIES.push(s.name);
+          syncWlSel();
+          wlRenderSecs();
+        });
+      } else {
+        b.title = 'مفيش كلية أو معهد مؤهل في القطاع ده على مجموعك في المرحلة الثالثة';
       }
-    }
-    if(reach){
-      reachableList.push({name: f.name, maxCutoff});
-    }
-  });
-
-  reachableList.sort((a, b) => b.maxCutoff - a.maxCutoff);
-  const topSectorsSet = new Set(reachableList.slice(0, 3).map(x => x.name));
-
-  // 2. عرض قطاعات الكليات مع شارة "🔥 أعلى فرصة لمجموعك"
-  const box = $('wlSecs'); box.innerHTML = '';
-  FACULTIES.filter(f => f.gov !== null && f.sec.includes(tr)).forEach(f=>{
-    let reach = isNaN(sc) ? true : sc >= f.gov;
-    if(!reach && true){
-      const kws = getSectorKeywords(f.name);
-      const match = getCurrentGovDB(typeof tr !== "undefined" ? tr : TRACK).some(x => isPhase2Eligible(x, tr, sc) && kws.some(kw => x.name.includes(kw)));
-      if(match) reach = true;
-    }
-    let availCount = 0;
-    if (reach && true) {
-      const kws = getSectorKeywords(f.name);
-      availCount = getCurrentGovDB(typeof tr !== "undefined" ? tr : TRACK).filter(x => isPhase2Eligible(x, tr, sc) && kws.some(kw => x.name.includes(kw))).length;
-    }
-
-    const isSel = SECTOR_PRIORITIES.includes(f.name);
-    const isTopOpportunity = reach && topSectorsSet.has(f.name);
-    const selRank = isSel ? (SECTOR_PRIORITIES.indexOf(f.name) + 1) : 0;
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'wl-sec' + (reach ? '' : ' dis') + (isSel ? ' on' : '');
-    b.dataset.name = f.name;
-
-    const topBadge = isTopOpportunity ? `<span style="display:inline-block;background:#FFE4E1;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:0.65rem;font-weight:800;border:1px solid #E6B0AA;margin-bottom:4px;animation:pulse 2s infinite">🔥 أعلى فرصة لمجموعك</span><br>` : '';
-
-    const shortcutHtml = reach ? `<br><span class="sec-cherry-pick" data-sec="${esc(f.name)}" style="display:inline-block;margin-top:6px;font-size:0.73rem;color:var(--brand-dk);background:rgba(179,74,56,0.1);padding:3px 8px;border-radius:4px;font-weight:700;cursor:pointer">🔍 اختار كليات معينة بالاسم</span>` : '';
-
-    b.innerHTML = topBadge +
-      (isSel ? `<span class="ord" style="font-size:.72rem;margin-inline-end:4px" title="ترتيب الأولوية">أولوية ${selRank}</span>` : '') +
-      `${esc(f.name)}` +
-      (reach ? (availCount > 0 ? ` <small style="font-weight:400;opacity:.85">(${availCount} متاحة)</small>` : '') : ` <small style="font-weight:400">(حده ${f.gov}%)</small>`) +
-      shortcutHtml;
-
-    if(reach){
-      b.addEventListener('click', (e)=>{
-        const cpEl = e.target.closest('.sec-cherry-pick');
-        if(cpEl){
-          e.stopPropagation();
-          e.preventDefault();
-
-          const facBox = $('wlFacultyBox');
-          const facArrow = $('wlFacultyArrow');
-          if(facBox) facBox.style.display = 'block';
-          if(facArrow) facArrow.textContent = '▲';
-
-          const facSearch = $('wlFacultySearch');
-          const kw = getSectorKeywords(f.name)[0] || f.name;
-          if(facSearch){
-            facSearch.value = kw;
-          }
-
-          wlRenderFaculties(tr, sc);
-
-          const facAcc = $('wlFacultyAccordion');
-          if(facAcc){
-            facAcc.scrollIntoView({behavior: 'smooth', block: 'start'});
-          }
-          return;
-        }
-
-        const i = SECTOR_PRIORITIES.indexOf(f.name);
-        if(i >= 0) SECTOR_PRIORITIES.splice(i,1); else SECTOR_PRIORITIES.push(f.name);
-        syncWlSel();
-        wlRenderSecs();
-      });
-    } else b.title = 'الحد الأدنى الحكومي للقطاع ده أعلى من مجموعك';
-    box.appendChild(b);
-  });
+      box.appendChild(b);
+    });
+  }
 
   const emptyGuideEl = $('wlEmptyGuide');
-  if(emptyGuideEl){
-    emptyGuideEl.style.display = (WL_SEL.length === 0 ? 'block' : 'none');
+  if (emptyGuideEl){
+    emptyGuideEl.style.display = (state === 'ok' && WL_SEL.length === 0) ? 'block' : 'none';
   }
 
-  // 2. عرض قسم الكليات الجامعية وقسم المعاهد والجامعات غير الحكومية القابلة للطي
+  wlRenderScoreNotice(tr, sc, state, pool.length);
+
+  /* كل الواجهات بتتغذى من نفس المجمّع */
   wlRenderFaculties(tr, sc);
   wlRenderInsts(tr, sc);
-  wlRenderNational(tr, sc);
-  wlRenderPrivate(tr, sc);
-  wlRenderForeign(tr, sc);
+  wlRenderNamePicker(tr, sc);
 
-  // 3. تحديث مؤشر استهلاك الرغبات المباشر (Live Wishlist Counter)
+  /* الجامعات الأهلية/الخاصة/الأجنبية شغالة بالنسبة المئوية زي ما هي — بنحوّل عرض المجموع ليها فقط */
+  const scPct = (sc === null || isNaN(sc)) ? NaN : (sc / 320) * 100;
+  wlRenderNational(tr, scPct);
+  wlRenderPrivate(tr, scPct);
+  wlRenderForeign(tr, scPct);
+
+  /* مؤشر استهلاك الرغبات المباشر — بنفس منطق التوليد النهائي بالظبط */
   const liveStatsEl = $('wlLiveStats');
-  if (liveStatsEl) {
-    const tempRows = [];
-    const tempSeen = new Set();
-    const ar = wlArea();
-    const C = (typeof GOVUNIS !== 'undefined') ? GOVUNIS.filter(u => !ar.A.includes(u) && !ar.B.includes(u)) : [];
-    
-    for (const name of WL_SEL) {
-      if (tempRows.length >= 75) break;
-      const matchingDb = (true) ? getCurrentGovDB(typeof tr !== "undefined" ? tr : TRACK).filter(x => x.name === name) : [];
-      if (matchingDb.length) {
-        const item = matchingDb[0];
-        const nmNorm = normInstName(name);
-        if (!tempSeen.has(nmNorm)) {
-          tempSeen.add(nmNorm);
-          tempRows.push(name);
-        }
-      } else {
-        for (const [g, arr] of [['أ', ar.A], ['ب', ar.B], ['ج', C]]) {
-          for (const u of arr) {
-            if (tempRows.length >= 75) break;
-            const key = `${name} — جامعة ${u}`;
-            const nmNorm = normInstName(key);
-            if (!tempSeen.has(nmNorm)) {
-              tempSeen.add(nmNorm);
-              tempRows.push(key);
-            }
-          }
-        }
-      }
-    }
-    
-    const countGen = tempRows.length;
+  if (liveStatsEl){
+    const countGen  = wlBuildRows(tr, sc).length;
     const remaining = 75 - countGen;
-    const manualCount = WL_SEL.length;
-    
-    liveStatsEl.innerHTML = `
-      <span style="background:var(--navy-3);color:var(--navy);padding:4px 9px;border-radius:var(--r-s)">القطاعات المختارة: <b class="num">${SECTOR_PRIORITIES.length}</b></span>
-      <span style="background:rgba(59,130,246,.12);color:var(--brand-dk);padding:4px 9px;border-radius:var(--r-s)">الكليات المحددة: <b class="num">${SELECTED_FACULTIES.length}</b></span>
-      <span style="background:rgba(168,85,247,.12);color:#7e22ce;padding:4px 9px;border-radius:var(--r-s)">المعاهد المحددة: <b class="num">${SELECTED_INSTITUTES.length}</b></span>
-      <span style="background:rgba(21,128,61,.12);color:var(--ok);padding:4px 9px;border-radius:var(--r-s)">الرغبات المتاحة حاليًا: <b class="num">${countGen}</b> / 75</span>
-      <span style="background:rgba(234,179,8,.18);color:var(--near);padding:4px 9px;border-radius:var(--r-s)">متبقي: <b class="num">${remaining}</b> رغبة</span>
-      ${countGen >= 75 ? '<span style="color:var(--no);font-weight:700;font-size:.8rem">⚠️ تم الوصول للحد الأقصى الرسمى (75 رغبة)</span>' : ''}
-    `;
+    liveStatsEl.innerHTML =
+      '<span style="background:var(--navy-3);color:var(--navy);padding:4px 9px;border-radius:var(--r-s)">القطاعات المختارة: <b class="num">' + SECTOR_PRIORITIES.length + '</b></span>' +
+      '<span style="background:rgba(59,130,246,.12);color:var(--brand-dk);padding:4px 9px;border-radius:var(--r-s)">الكليات المحددة: <b class="num">' + SELECTED_FACULTIES.length + '</b></span>' +
+      '<span style="background:rgba(168,85,247,.12);color:#7e22ce;padding:4px 9px;border-radius:var(--r-s)">المعاهد المحددة: <b class="num">' + SELECTED_INSTITUTES.length + '</b></span>' +
+      '<span style="background:rgba(21,128,61,.12);color:var(--ok);padding:4px 9px;border-radius:var(--r-s)">الرغبات المتاحة حاليًا: <b class="num">' + countGen + '</b> / 75</span>' +
+      '<span style="background:rgba(234,179,8,.18);color:var(--near);padding:4px 9px;border-radius:var(--r-s)">متبقي: <b class="num">' + remaining + '</b> رغبة</span>' +
+      (countGen >= 75 ? '<span style="color:var(--no);font-weight:700;font-size:.8rem">⚠️ تم الوصول للحد الأقصى الرسمى (75 رغبة)</span>' : '');
   }
+}
+
+/* بطاقة مؤسسة قابلة للاختيار — نفس السلوك في كل القوائم */
+function wlMakePickBtn(x, withBox){
+  const idx   = MANUAL_PICKS.indexOf(x.name);
+  const isSel = idx >= 0;
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'wl-sec' + (isSel ? ' on' : '');
+  b.dataset.name = x.name;
+  b.style.fontSize = '.81rem';
+  b.style.padding  = '6px 12px';
+  b.setAttribute('aria-pressed', isSel ? 'true' : 'false');
+  b.innerHTML =
+    (withBox ? (isSel ? '☑ ' : '☐ ') : '') +
+    (isSel ? '<span class="ord" style="font-size:.72rem;margin-inline-end:4px" title="ترتيب الأولوية">أولوية ' + (idx + 1) + '</span>' : '') +
+    esc(x.name) +
+    ((x.university && x.university !== 'غير محدد') ? ' <small style="font-weight:400;opacity:.7">— جامعة ' + esc(x.university) + '</small>' : '') +
+    ' <small style="font-weight:400;opacity:.8">(' + x.minScoreRaw + ' درجة · ' + PHASE3_DATA_LABEL + ')</small>';
+  b.addEventListener('click', () => {
+    /* نفس تحقق الأهلية المستخدم في المولد قبل أي إضافة — الاختيار مش تجاوز */
+    const t2 = $('wlTrack').value, s2 = wlScoreVal();
+    const rec = getPhase3DB(t2).find(r => r.name === x.name);
+    if (!rec || !isPhase3Eligible(rec, t2, s2)){
+      manualRevalidate(t2, s2);
+      wlRenderSecs();
+      return;
+    }
+    manualToggle(x.name);
+    wlRenderSecs();
+  });
+  return b;
 }
 
 function wlRenderFaculties(tr, sc){
-  const accordion = $('wlFacultyAccordion'), cnt = $('wlFacultyCnt'), facBox = $('wlFacultySecs'), searchCnt = $('wlFacultySearchCnt');
-  if(!accordion || !facBox || false) return;
+  const accordion = $('wlFacultyAccordion'), cnt = $('wlFacultyCnt'),
+        facBox = $('wlFacultySecs'), searchCnt = $('wlFacultySearchCnt');
+  if (!accordion || !facBox) return;
 
-  const eligibleFaculties = getCurrentGovDB(typeof tr !== "undefined" ? tr : TRACK).filter(x => !isInstitute(x.name) && isPhase2Eligible(x, tr, sc));
-  eligibleFaculties.sort((a,b) => b.minScorePct - a.minScorePct);
+  const eligibleFaculties = phase3EligibleList(tr, sc)
+    .filter(x => !isInstitute(x.name))
+    .slice()
+    .sort((a, b) => b.minScoreRaw - a.minScoreRaw);
 
-  if(!eligibleFaculties.length){
+  if (!eligibleFaculties.length){
     accordion.style.display = 'none';
+    facBox.innerHTML = '';
+    if (cnt) cnt.textContent = '0';
     return;
   }
   accordion.style.display = 'block';
-  cnt.textContent = eligibleFaculties.length;
+  if (cnt) cnt.textContent = eligibleFaculties.length;
 
   const q = ($('wlFacultySearch') ? $('wlFacultySearch').value : '').trim().toLowerCase();
-  const filtered = q ? eligibleFaculties.filter(x => x.name.toLowerCase().includes(q) || (x.university && x.university.toLowerCase().includes(q))) : eligibleFaculties;
-  if(searchCnt) searchCnt.textContent = q ? `المعروض: ${filtered.length} من ${eligibleFaculties.length}` : '';
+  const filtered = q
+    ? eligibleFaculties.filter(x => x.name.toLowerCase().includes(q) || (x.university && x.university.toLowerCase().includes(q)))
+    : eligibleFaculties;
+  if (searchCnt) searchCnt.textContent = q ? ('المعروض: ' + filtered.length + ' من ' + eligibleFaculties.length) : '';
 
   facBox.innerHTML = '';
-  filtered.forEach(x => {
-    const b = document.createElement('button');
-    b.type = 'button';
-    const isSel = SELECTED_FACULTIES.includes(x.name);
-    const selRank = isSel ? (SELECTED_FACULTIES.indexOf(x.name) + 1) : 0;
-    b.className = 'wl-sec' + (isSel ? ' on' : '');
-    b.dataset.name = x.name;
-    b.style.fontSize = '.81rem';
-    b.style.padding = '6px 12px';
-    b.innerHTML = (isSel ? `<span class="ord" style="font-size:.72rem;margin-inline-end:4px" title="ترتيب الأولوية">أولوية ${selRank}</span>` : '') +
-      `${esc(x.name)}` +
-      ` <small style="font-weight:400;opacity:.8">(${x.minScorePct}%)</small>`;
-    b.addEventListener('click', () => {
-      const i = SELECTED_FACULTIES.indexOf(x.name);
-      if(i >= 0) SELECTED_FACULTIES.splice(i,1); else SELECTED_FACULTIES.push(x.name);
-      syncWlSel();
-      wlRenderSecs();
-    });
-    facBox.appendChild(b);
-  });
+  filtered.forEach(x => facBox.appendChild(wlMakePickBtn(x, false)));
 }
 
 function wlRenderInsts(tr, sc){
-  const accordion = $('wlInstAccordion'), cnt = $('wlInstCnt'), instBox = $('wlInstSecs'), searchCnt = $('wlInstSearchCnt');
-  if(!accordion || !instBox || false) return;
+  const accordion = $('wlInstAccordion'), cnt = $('wlInstCnt'),
+        instBox = $('wlInstSecs'), searchCnt = $('wlInstSearchCnt');
+  if (!accordion || !instBox) return;
 
-  const eligibleInsts = getCurrentGovDB(typeof tr !== "undefined" ? tr : TRACK).filter(x => isInstitute(x.name) && isPhase2Eligible(x, tr, sc));
-  eligibleInsts.sort((a,b) => b.minScorePct - a.minScorePct);
+  const eligibleInsts = phase3EligibleList(tr, sc)
+    .filter(x => isInstitute(x.name))
+    .slice()
+    .sort((a, b) => b.minScoreRaw - a.minScoreRaw);
 
-  if(!eligibleInsts.length){
+  if (!eligibleInsts.length){
     accordion.style.display = 'none';
+    instBox.innerHTML = '';
+    if (cnt) cnt.textContent = '0';
     return;
   }
   accordion.style.display = 'block';
-  cnt.textContent = eligibleInsts.length;
+  if (cnt) cnt.textContent = eligibleInsts.length;
 
   const q = ($('wlInstSearch') ? $('wlInstSearch').value : '').trim().toLowerCase();
-  const filtered = q ? eligibleInsts.filter(x => x.name.toLowerCase().includes(q) || (x.university && x.university.toLowerCase().includes(q))) : eligibleInsts;
-  if(searchCnt) searchCnt.textContent = q ? `المعروض: ${filtered.length} من ${eligibleInsts.length}` : '';
+  const filtered = q
+    ? eligibleInsts.filter(x => x.name.toLowerCase().includes(q) || (x.university && x.university.toLowerCase().includes(q)))
+    : eligibleInsts;
+  if (searchCnt) searchCnt.textContent = q ? ('المعروض: ' + filtered.length + ' من ' + eligibleInsts.length) : '';
 
   instBox.innerHTML = '';
-  filtered.forEach(x => {
-    const b = document.createElement('button');
-    b.type = 'button';
-    const isSel = SELECTED_INSTITUTES.includes(x.name);
-    const selRank = isSel ? (SELECTED_INSTITUTES.indexOf(x.name) + 1) : 0;
-    b.className = 'wl-sec' + (isSel ? ' on' : '');
-    b.dataset.name = x.name;
-    b.style.fontSize = '.81rem';
-    b.style.padding = '6px 12px';
-    b.innerHTML = (isSel ? `<span class="ord" style="font-size:.72rem;margin-inline-end:4px" title="ترتيب الأولوية">أولوية ${selRank}</span>` : '') +
-      `${esc(x.name)}` +
-      ` <small style="font-weight:400;opacity:.8">(${x.minScorePct}%)</small>`;
-    b.addEventListener('click', () => {
-      const i = SELECTED_INSTITUTES.indexOf(x.name);
-      if(i >= 0) SELECTED_INSTITUTES.splice(i,1); else SELECTED_INSTITUTES.push(x.name);
-      syncWlSel();
-      wlRenderSecs();
-    });
-    instBox.appendChild(b);
-  });
+  filtered.forEach(x => instBox.appendChild(wlMakePickBtn(x, false)));
+}
+
+/* ---------- 🔎 لوحة اختيار كليات معينة بالاسم ---------- */
+function wlNamePanelIsOpen(){
+  const p = $('wlNamePickPanel');
+  return !!p && p.style.display === 'block';
+}
+function wlToggleNamePicker(force){
+  const p = $('wlNamePickPanel'), b = $('wlNamePickBtn'), ar = $('wlNamePickArrow');
+  if (!p) return;
+  const next = (force === undefined) ? !wlNamePanelIsOpen() : !!force;
+  p.style.display = next ? 'block' : 'none';
+  if (b)  b.setAttribute('aria-expanded', next ? 'true' : 'false');
+  if (ar) ar.textContent = next ? '▲' : '▼';
+  if (next){
+    wlRenderNamePicker($('wlTrack').value, wlScoreVal());
+    const s = $('wlNamePickSearch');
+    if (s) setTimeout(() => s.focus(), 120);
+  }
+}
+function wlOpenNamePicker(prefill){
+  const s = $('wlNamePickSearch');
+  if (s && prefill !== undefined && prefill !== null) s.value = prefill;
+  wlToggleNamePicker(true);
+  const w = $('wlNamePickWrap');
+  if (w && w.scrollIntoView) w.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function wlRenderNamePicker(tr, sc){
+  const badge = $('wlNamePickCntBadge');
+  if (badge) badge.textContent = MANUAL_PICKS.length;
+
+  const listEl = $('wlNamePickList'), cntEl = $('wlNamePickCount'), hintEl = $('wlNamePickHint');
+  if (!listEl) return;
+  if (cntEl) cntEl.innerHTML = 'الكليات المختارة بالاسم: <b class="num">' + MANUAL_PICKS.length + '</b>';
+  if (!wlNamePanelIsOpen()) return;   /* مش بنبني القايمة وهي مقفولة — أداء */
+
+  const state = phase3ScoreState(tr, sc);
+  if (state !== 'ok'){
+    listEl.innerHTML = '';
+    if (hintEl) hintEl.textContent = wlOutOfRangeMsg(tr, sc, state);
+    return;
+  }
+
+  const pool = phase3EligibleList(tr, sc).slice().sort((a, b) => b.minScoreRaw - a.minScoreRaw);
+  const q = ($('wlNamePickSearch') ? $('wlNamePickSearch').value : '').trim().toLowerCase();
+  /* البحث فلتر بس — مش بيمنح أهلية لأي مؤسسة بره المجمّع المؤهل */
+  const filtered = q
+    ? pool.filter(x => x.name.toLowerCase().includes(q) || (x.university && x.university.toLowerCase().includes(q)))
+    : pool;
+
+  if (hintEl){
+    hintEl.textContent = q
+      ? ('المعروض: ' + filtered.length + ' من ' + pool.length + ' مؤسسة مؤهلة لمجموعك (البحث بيفلتر المؤهل بس)')
+      : ('المؤهل لمجموعك حاليًا: ' + pool.length + ' كلية ومعهد — ' + PHASE3_DATA_LABEL);
+  }
+
+  listEl.innerHTML = '';
+  if (!filtered.length){
+    listEl.innerHTML = '<div style="font-size:.82rem;color:var(--muted);padding:8px 4px">مفيش نتايج مطابقة جوه الكليات والمعاهد المؤهلة لمجموعك.</div>';
+    return;
+  }
+  const frag = document.createDocumentFragment();
+  filtered.forEach(x => frag.appendChild(wlMakePickBtn(x, true)));
+  listEl.appendChild(frag);
 }
 
 function wlRenderUniExplorer(typeFilter, accordionId, cntId, boxId, secsId, tr, sc){
@@ -23625,136 +23829,118 @@ function wlRenderForeign(tr, sc){
   wlRenderUniExplorer('فرع جامعة أجنبية', 'wlForeignAccordion', 'wlForeignCnt', 'wlForeignBox', 'wlForeignSecs', tr, sc);
 }
 
+/* ============================================================
+   بناء صفوف قائمة الرغبات — التنفيذ الوحيد المستخدم في
+   المؤشر المباشر وفي التوليد النهائي (مفيش منطق مكرر)
+   الترتيب: أهلية ← إزالة تكرار ← أولوية الاختيار اليدوي ←
+             القطاعات ← ترتيب جغرافي عالمي أ ← ب ← ج ← سقف 75
+   ============================================================ */
+function wlBuildRows(tr, sc){
+  const rows = [];
+  const seen = new Set();
+  if (phase3ScoreState(tr, sc) !== 'ok') return rows;
+
+  const ar = wlArea();
+  const geoRank = (u) => (!u || u === 'غير محدد') ? 3 : (ar.A.indexOf(u) >= 0 ? 1 : (ar.B.indexOf(u) >= 0 ? 2 : 3));
+  const geoTag  = (u) => { const r = geoRank(u); return r === 1 ? 'أ' : (r === 2 ? 'ب' : 'ج'); };
+  const db = getPhase3DB(tr);
+
+  function push(item){
+    if (rows.length >= 75) return;            /* الحد الأقصى الرسمي */
+    if (!isPhase3Eligible(item, tr, sc)) return;  /* إعادة تحقق قبل كل إضافة */
+    const key = normInstName(item.name);
+    if (seen.has(key)) return;                /* مفيش تكرار */
+    seen.add(key);
+    const uni = (item.university && item.university !== 'غير محدد') ? item.university : '';
+    rows.push({ name: item.name, u: uni, g: geoTag(uni), min: item.minScoreRaw });
+  }
+
+  /* 1) الاختيارات اليدوية بالاسم — بنفس ترتيب الاختيار بالظبط */
+  for (const nm of MANUAL_PICKS){
+    if (rows.length >= 75) break;
+    const item = db.find(x => x.name === nm);
+    if (item) push(item);
+  }
+  /* 2) الباقي التلقائي — مجمّع واحد (القطاعات + الاستكمال) بترتيب جغرافي عالمي أ ← ب ← ج.
+        قبل كده كان الترتيب الجغرافي بيتعمل جوه كل قطاع لوحده، فكان بيرجع يبدأ من (أ)
+        عند كل قطاع جديد وعند الانتقال للاستكمال — وده كان بينتج (ج) قبل (ب) في القايمة.
+        دلوقتي القطاعات والاستكمال بيتجمعوا في مجمّع واحد وبيتترتبوا مرة واحدة:
+          1) المجموعة الجغرافية عالمياً   أ ← ب ← ج
+          2) أولوية القطاعات اللي اختارها الطالب (جوه كل مجموعة جغرافية)
+          3) نفس كاسر التعادل القديم — الأعلى حدًا الأول
+          4) ترتيب المصدر — يضمن نتيجة حتمية متكررة 100% */
+  if (rows.length < 75){
+    const secKws = SECTOR_PRIORITIES.map(n => getSectorKeywords(n));
+    const secRankOf = (item) => {
+      for (let i = 0; i < secKws.length; i++){
+        if (secKws[i].some(kw => item.name.includes(kw))) return i;
+      }
+      return secKws.length;   /* مش جوه أي قطاع مختار — ييجي بعد القطاعات جوه نفس المجموعة الجغرافية */
+    };
+    const auto = [];
+    db.forEach((x, idx) => {
+      if (!isPhase3Eligible(x, tr, sc)) return;
+      auto.push({ item: x, geo: geoRank(x.university), sec: secRankOf(x), min: x.minScoreRaw, idx: idx });
+    });
+    auto.sort((a, b) =>
+      (a.geo - b.geo) ||
+      (a.sec - b.sec) ||
+      (b.min - a.min) ||
+      (a.idx - b.idx));
+    for (const e of auto){ if (rows.length >= 75) break; push(e.item); }
+  }
+  return rows.length > 75 ? rows.slice(0, 75) : rows;
+}
+
 function wlGenerate(){
+  const tr = $('wlTrack').value;
   const sc = wlScoreVal();
   wlRenderSecs();
+
   const out = $('wlOut'), list = $('wlList'), stats = $('wlStats');
-  if(!WL_SEL.length){
+  const state = phase3ScoreState(tr, sc);
+
+  if (state !== 'ok'){
+    out.classList.add('on');
+    list.innerHTML = '';
+    stats.innerHTML = '<span style="color:var(--no);font-weight:700">' + esc(wlOutOfRangeMsg(tr, sc, state)) + '</span>';
+    return;
+  }
+  if (!WL_SEL.length){
     out.classList.add('on');
     list.innerHTML = '';
     stats.innerHTML = '<span style="color:var(--near);font-weight:600">اختار قطاع أو كلية أو معهد واحد على الأقل من فوق الأول 👆</span>';
     return;
   }
-  const ar = wlArea();
-  const C = GOVUNIS.filter(u => !ar.A.includes(u) && !ar.B.includes(u));
-  const tr = $('wlTrack').value;
-  const rows = [];
-  const seen = new Set();
 
-  function getGeoTag(uniName) {
-    if (!uniName || uniName === 'غير محدد') return 'ج';
-    if (ar.A.includes(uniName)) return 'أ';
-    if (ar.B.includes(uniName)) return 'ب';
-    return 'ج';
-  }
-
-  function getGeoGroupRank(uniName) {
-    if (!uniName || uniName === 'غير محدد') return 3;
-    if (ar.A.includes(uniName)) return 1;
-    if (ar.B.includes(uniName)) return 2;
-    return 3;
-  }
-
-  // 1. إضافة الكليات المحددة يدويًا (SELECTED_FACULTIES)
-  for (const facName of SELECTED_FACULTIES) {
-    if (rows.length >= 75) break;
-    if (true) {
-      const item = getCurrentGovDB(typeof tr !== "undefined" ? tr : TRACK).find(x => x.name === facName && isPhase2Eligible(x, tr, sc));
-      if (item) {
-        const nmNorm = normInstName(item.name);
-        if (!seen.has(nmNorm)) {
-          seen.add(nmNorm);
-          const uni = item.university && item.university !== 'غير محدد' ? item.university : '';
-          rows.push({ name: item.name, u: uni, g: getGeoTag(uni) });
-        }
-      }
-    }
-  }
-
-  // 2. إضافة المعاهد المحددة يدويًا (SELECTED_INSTITUTES)
-  for (const instName of SELECTED_INSTITUTES) {
-    if (rows.length >= 75) break;
-    if (true) {
-      const item = getCurrentGovDB(typeof tr !== "undefined" ? tr : TRACK).find(x => x.name === instName && isPhase2Eligible(x, tr, sc));
-      if (item) {
-        const nmNorm = normInstName(item.name);
-        if (!seen.has(nmNorm)) {
-          seen.add(nmNorm);
-          const uni = item.university && item.university !== 'غير محدد' ? item.university : '';
-          rows.push({ name: item.name, u: uni, g: getGeoTag(uni) });
-        }
-      }
-    }
-  }
-
-  // 3. إضافة المؤسسات المتاحة الحقيقية في القطاعات ذات الأولوية (SECTOR_PRIORITIES) مرتبة جغرافياً (أ ← ب ← ج)
-  for (const secName of SECTOR_PRIORITIES) {
-    if (rows.length >= 75) break;
-    if (true) {
-      const kws = getSectorKeywords(secName);
-      const secItems = getCurrentGovDB(typeof tr !== "undefined" ? tr : TRACK).filter(x => isPhase2Eligible(x, tr, sc) && kws.some(kw => x.name.includes(kw)));
-      secItems.sort((a, b) => {
-        const uA = a.university && a.university !== 'غير محدد' ? a.university : '';
-        const uB = b.university && b.university !== 'غير محدد' ? b.university : '';
-        const gA = getGeoGroupRank(uA);
-        const gB = getGeoGroupRank(uB);
-        if (gA !== gB) return gA - gB;
-        return b.minScorePct - a.minScorePct;
-      });
-      for (const item of secItems) {
-        if (rows.length >= 75) break;
-        const nmNorm = normInstName(item.name);
-        if (!seen.has(nmNorm)) {
-          seen.add(nmNorm);
-          const uni = item.university && item.university !== 'غير محدد' ? item.university : '';
-          rows.push({ name: item.name, u: uni, g: getGeoTag(uni) });
-        }
-      }
-    }
-  }
-
-  // 4. استكمال باقي الخانات الـ75 من الكليات والمعاهد المتاحة بالمرحلة الحالية حتمياً مرتبة جغرافياً (أ ← ب ← ج)
-  if (rows.length < 75 && true) {
-    const eligibleDb = getCurrentGovDB(typeof tr !== "undefined" ? tr : TRACK).filter(x => isPhase2Eligible(x, tr, sc));
-    eligibleDb.sort((a, b) => {
-      const uA = a.university && a.university !== 'غير محدد' ? a.university : '';
-      const uB = b.university && b.university !== 'غير محدد' ? b.university : '';
-      const gA = getGeoGroupRank(uA);
-      const gB = getGeoGroupRank(uB);
-      if (gA !== gB) return gA - gB;
-      return b.minScorePct - a.minScorePct;
-    });
-
-    for (const item of eligibleDb) {
-      if (rows.length >= 75) break;
-      const nmNorm = normInstName(item.name);
-      if (!seen.has(nmNorm)) {
-        seen.add(nmNorm);
-        const uni = item.university && item.university !== 'غير محدد' ? item.university : '';
-        rows.push({ name: item.name, u: uni, g: getGeoTag(uni) });
-      }
-    }
-  }
+  const ar   = wlArea();
+  const rows = wlBuildRows(tr, sc);
 
   list.innerHTML = rows.map(r =>
-    `<div class="wl-row"><span>${esc(r.name)}${r.u ? ' — <b>جامعة ' + esc(r.u) + '</b>' : ''}</span>` +
-    `<span class="g ${r.g === 'أ' ? 'a' : r.g === 'ب' ? 'b' : 'c'}">${r.g}</span></div>`).join('');
+    '<div class="wl-row"><span>' + esc(r.name) + (r.u ? ' — <b>جامعة ' + esc(r.u) + '</b>' : '') +
+    ' <small style="font-weight:400;opacity:.75">(' + r.min + ' درجة · ' + PHASE3_DATA_LABEL + ')</small></span>' +
+    '<span class="g ' + (r.g === 'أ' ? 'a' : r.g === 'ب' ? 'b' : 'c') + '">' + r.g + '</span></div>').join('');
 
   const capped = rows.length >= 75;
-  stats.innerHTML = `<span>إجمالي القائمة: <b class="num">${rows.length}</b> رغبة` +
-    (capped ? ' — اكتملت القائمة عند الحد الأقصى الرسمي (75 رغبة). يمكنك تعديل أولوية اختياراتك اليدوية قبل التسجيل النهائي.' : ` (يوجد ${rows.length} اختيارًا مؤهلاً ومتاحاً لك حالياً من أصل 75 رغبة)`) + '</span>' +
-    `<span> · اختياراتك اليدوية: <b class="num">${WL_SEL.length}</b></span>` +
-    (sc != null ? ` · على مجموع <b class="num">${sc}%</b>` : '');
+  stats.innerHTML =
+    '<span>إجمالي القائمة: <b class="num">' + rows.length + '</b> رغبة' +
+    (capped
+      ? ' — اكتملت القائمة عند الحد الأقصى الرسمي (75 رغبة). يمكنك تعديل أولوية اختياراتك اليدوية قبل التسجيل النهائي.'
+      : ' (ده كل المؤهل ليك فعليًا في المرحلة الثالثة من أصل 75 رغبة — مفيش حشو)') + '</span>' +
+    '<span> · اختياراتك بالاسم: <b class="num">' + MANUAL_PICKS.length + '</b></span>' +
+    '<span> · القطاعات المختارة: <b class="num">' + SECTOR_PRIORITIES.length + '</b></span>' +
+    ' · على مجموع <b class="num">' + sc + '</b> درجة (المرحلة الثالثة · ' + PHASE3_DATA_LABEL + ')';
   out.classList.add('on');
 
-  $('wlCopy').onclick = ()=>{
+  $('wlCopy').onclick = () => {
     const sep = '------------------------------';
-    const txt = 'قايمة رغباتي — مسار MASAR (مرتّبة حسب التوزيع الجغرافي الرسمي أ ← ب ← ج)\n' +
-      `المحافظة: ${GEO[+$('wlGov').value].gov} · ${ar.a}\n` + sep + '\n' +
-      rows.map((r,i)=> `${i+1}. ${r.name}${r.u ? ' — جامعة ' + r.u : ''} (مجموعة ${r.g})`).join('\n') +
+    const txt = 'قايمة رغباتي — المرحلة الثالثة · مسار MASAR (مرتّبة حسب التوزيع الجغرافي الرسمي أ ← ب ← ج)\n' +
+      'المحافظة: ' + GEO[+$('wlGov').value].gov + ' · ' + ar.a + '\n' +
+      'الشعبة: ' + tr + ' · المجموع: ' + sc + ' درجة من 320 · مرجع: ' + PHASE3_DATA_LABEL + '\n' + sep + '\n' +
+      rows.map((r, i) => (i + 1) + '. ' + r.name + (r.u ? ' — جامعة ' + r.u : '') + ' (مجموعة ' + r.g + ')').join('\n') +
       '\n' + sep + '\nملحوظة: لو كلية مش ظاهرة في جامعة معينة على موقع التنسيق، يبقى مش متاحة فيها — كمّل على اللي بعدها بنفس الترتيب.';
     const b = $('wlCopy'), t = b.textContent;
-    copyText(txt).then(()=>{ b.textContent = 'اتنسخت ✓'; setTimeout(()=> b.textContent = t, 1700); }).catch(()=>{});
+    copyText(txt).then(() => { b.textContent = 'اتنسخت ✓'; setTimeout(() => b.textContent = t, 1700); }).catch(() => {});
   };
 }
 
@@ -23772,33 +23958,38 @@ function initWishlist(){
   }
   $('wlGov').addEventListener('change', syncArea);
   $('wlArea').addEventListener('change', wlRenderGeo);
-  $('wlTrack').addEventListener('change', ()=>{ WL_SEL = []; wlRenderSecs(); });
-  $('wlScore').addEventListener('input', wlRenderSecs);
-  $('wlAuto').addEventListener('click', ()=>{
-    const tr = $('wlTrack').value, sc = parseFloat($('wlScore').value);
-    const autoSectors = FACULTIES.filter(f => {
-      if (f.gov === null || !f.sec.includes(tr)) return false;
-      if (isNaN(sc) || sc >= f.gov) return true;
-      if (true) {
+  /* تغيير الشعبة أو المجموع = إعادة تحقق كاملة (الاختيارات الباطلة بتتشال جوه wlRenderSecs) */
+  $('wlTrack').addEventListener('change', wlRenderSecs);
+  $('wlScore').addEventListener('input',  wlRenderSecs);
+  /* الترشيح التلقائي — من المجمّع المؤهل للمرحلة الثالثة فقط، مفيش أي fallback لمرحلة تانية */
+  $('wlAuto').addEventListener('click', () => {
+    const tr = $('wlTrack').value, sc = wlScoreVal();
+    if (phase3ScoreState(tr, sc) !== 'ok'){ wlRenderSecs(); return; }
+    const pool = phase3EligibleList(tr, sc);
+    FACULTIES
+      .filter(f => f.gov !== null && f.sec.includes(tr))
+      .filter(f => {
         const kws = getSectorKeywords(f.name);
-        return getCurrentGovDB(typeof tr !== "undefined" ? tr : TRACK).some(x => {
-          if (!x.acceptedTracks || !x.acceptedTracks.includes(tr)) return false;
-          if (!isNaN(sc) && sc < x.minScorePct) return false;
-          const nm = normInstName(x.name);
-          if (tr === 'أدبي' && typeof VACANT_PHASE2_2026_LITERARY !== 'undefined' && !VACANT_PHASE2_2026_LITERARY.has(nm)) return false;
-          return kws.some(kw => x.name.includes(kw));
-        });
-      }
-      return false;
-    }).map(f => f.name);
-
-    const combined = [...WL_SEL];
-    for (const name of autoSectors) {
-      if (!combined.includes(name)) combined.push(name);
-    }
-    WL_SEL = combined;
+        return pool.some(x => kws.some(kw => x.name.includes(kw)));
+      })
+      .forEach(f => { if (SECTOR_PRIORITIES.indexOf(f.name) < 0) SECTOR_PRIORITIES.push(f.name); });
+    syncWlSel();
     wlRenderSecs();
   });
+
+  /* 🔎 لوحة اختيار كليات معينة بالاسم — بتفتح تحت الزرار على طول */
+  const namePickBtn = $('wlNamePickBtn');
+  if (namePickBtn){
+    namePickBtn.addEventListener('click', (e) => { e.preventDefault(); wlToggleNamePicker(); });
+  }
+  const namePickSearch = $('wlNamePickSearch');
+  if (namePickSearch){
+    namePickSearch.addEventListener('input', () => wlRenderNamePicker($('wlTrack').value, wlScoreVal()));
+  }
+  const namePickClear = $('wlNamePickClear');
+  if (namePickClear){
+    namePickClear.addEventListener('click', (e) => { e.preventDefault(); manualClear(); wlRenderSecs(); });
+  }
 
   // 1. زر الكليات الحكومية المتاحة
   const facultyToggleBtn = $('wlFacultyToggleBtn'), facultyBox = $('wlFacultyBox'), facultyArrow = $('wlFacultyArrow'), facultySearchInp = $('wlFacultySearch');
